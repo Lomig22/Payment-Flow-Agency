@@ -97,7 +97,7 @@
 ```bash
 # Cloner le repository
 git clone https://github.com/Lomig22/Payment-Flow-Agency.git
-cd Payment-Flow-Agency/agency-app
+cd Payment-Flow-Agency
 
 # Installer les dépendances
 npm install
@@ -117,34 +117,33 @@ npm start
 
 ### Déploiement sur Vercel
 
-#### Option 1 : Via CLI
+#### Option 1 : Via le bouton Deploy (Recommandé ⭐)
 
-```bash
-npm install -g vercel
-cd agency-app
-vercel
-```
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Lomig22/Payment-Flow-Agency)
 
 #### Option 2 : Via Dashboard
 
 1. Connectez-vous sur [vercel.com](https://vercel.com)
 2. Cliquez sur "New Project"
 3. Importez votre repository GitHub : `Lomig22/Payment-Flow-Agency`
-4. Configurez le projet :
-   - **Framework Preset** : Next.js
-   - **Root Directory** : `agency-app`
-   - **Build Command** : `npm run build`
-   - **Output Directory** : `.next`
+4. Vercel détectera automatiquement Next.js
 5. Cliquez sur "Deploy"
 
-Votre site sera disponible sur une URL Vercel (ex: `agency-premium.vercel.app`)
+#### Option 3 : Via CLI
+
+```bash
+npm install -g vercel
+vercel
+```
+
+Votre site sera disponible sur une URL Vercel (ex: `payment-flow-agency.vercel.app`)
 
 ---
 
 ## 📂 Structure du Projet
 
 ```
-agency-app/
+Payment-Flow-Agency/
 ├── src/
 │   ├── app/                    # App Router Next.js
 │   │   ├── page.tsx           # Landing page
@@ -172,6 +171,7 @@ agency-app/
 ├── public/                    # Assets statiques
 ├── tailwind.config.ts         # Config Tailwind
 ├── next.config.ts             # Config Next.js
+├── vercel.json               # Config Vercel
 └── package.json
 ```
 
@@ -252,7 +252,7 @@ Les contributions sont les bienvenues ! Pour proposer des améliorations :
 
 ## 📄 Licence
 
-Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
+Ce projet est sous licence MIT.
 
 ---
 
