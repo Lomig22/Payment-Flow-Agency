@@ -1,0 +1,227 @@
+import { 
+  Globe, 
+  TrendingUp, 
+  Zap, 
+  BarChart3,
+  Bot,
+  CreditCard,
+  Calendar,
+  Search,
+  FileText,
+  Share2,
+  Megaphone,
+  Shield
+} from "lucide-react";
+
+export const mainServices = [
+  {
+    id: "web-seo",
+    icon: Globe,
+    title: "Site Web & SEO",
+    description:
+      "Sites performants, optimisés pour le référencement et la conversion. Architecture moderne, design premium.",
+    features: [
+      "Sites vitrines & e-commerce",
+      "Optimisation SEO technique",
+      "Performance Core Web Vitals",
+      "Design responsive premium",
+    ],
+  },
+  {
+    id: "marketing",
+    icon: TrendingUp,
+    title: "Marketing Digital",
+    description:
+      "Stratégies d'acquisition et de conversion sur tous les canaux digitaux. ROI mesurable.",
+    features: [
+      "Google Ads & Meta Ads",
+      "Email marketing",
+      "Content marketing",
+      "Social media management",
+    ],
+  },
+  {
+    id: "automation",
+    icon: Zap,
+    title: "Automatisation & IA",
+    description:
+      "Automatisez vos process, intégrez l'IA dans votre workflow. Gagnez du temps, scalez votre business.",
+    features: [
+      "Chatbots intelligents",
+      "Automatisation CRM",
+      "Workflows Zapier/Make",
+      "Intégrations API custom",
+    ],
+  },
+];
+
+export const detailedServices = [
+  {
+    id: "website",
+    icon: Globe,
+    title: "Site Web SEO",
+    description: "Site vitrine ou e-commerce optimisé pour les moteurs de recherche",
+    price: "À partir de 1 490€",
+  },
+  {
+    id: "marketing-digital",
+    icon: Megaphone,
+    title: "Marketing Digital",
+    description: "Stratégie d'acquisition omnicanale et gestion de campagnes",
+    price: "À partir de 990€/mois",
+  },
+  {
+    id: "tools",
+    icon: Zap,
+    title: "Outils Digitaux & Intégrations",
+    description: "Chatbots, APIs, automatisations et intégrations sur-mesure",
+    price: "À partir de 490€",
+  },
+  {
+    id: "analytics",
+    icon: BarChart3,
+    title: "Analytics & Tracking",
+    description: "Mise en place du tracking, dashboards et optimisation data-driven",
+    price: "À partir de 390€",
+  },
+];
+
+export const pricingOptions = [
+  {
+    id: "chatbot",
+    icon: Bot,
+    label: "Chatbot IA",
+    description: "Assistant conversationnel intelligent",
+    price: 490,
+    category: "tools",
+  },
+  {
+    id: "ia-integration",
+    icon: Zap,
+    label: "Intégration IA",
+    description: "GPT, Claude, ou modèle custom",
+    price: 790,
+    category: "tools",
+  },
+  {
+    id: "api",
+    icon: Globe,
+    label: "API Custom",
+    description: "Développement API sur-mesure",
+    price: 690,
+    category: "tools",
+  },
+  {
+    id: "stripe",
+    icon: CreditCard,
+    label: "Paiement Stripe",
+    description: "Intégration paiement sécurisé",
+    price: 290,
+    category: "tools",
+  },
+  {
+    id: "calendly",
+    icon: Calendar,
+    label: "Calendly",
+    description: "Prise de RDV automatisée",
+    price: 190,
+    category: "tools",
+  },
+  {
+    id: "seo-premium",
+    icon: Search,
+    label: "SEO Premium",
+    description: "Optimisation SEO mensuelle",
+    price: 490,
+    priceType: "monthly",
+    category: "marketing",
+  },
+  {
+    id: "blog-seo",
+    icon: FileText,
+    label: "Blog SEO",
+    description: "Articles optimisés (4/mois)",
+    price: 390,
+    priceType: "monthly",
+    category: "marketing",
+  },
+  {
+    id: "social-media",
+    icon: Share2,
+    label: "Réseaux Sociaux",
+    description: "Gestion community management",
+    price: 590,
+    priceType: "monthly",
+    category: "marketing",
+  },
+  {
+    id: "ads",
+    icon: Megaphone,
+    label: "Publicité Ads",
+    description: "Gestion campagnes Google/Meta",
+    price: 690,
+    priceType: "monthly",
+    category: "marketing",
+  },
+  {
+    id: "maintenance",
+    icon: Shield,
+    label: "Assurance Maintenance",
+    description: "Support technique & mises à jour",
+    price: 19,
+    priceType: "monthly",
+    category: "support",
+  },
+];
+
+export const pricingPlans = [
+  {
+    id: "starter",
+    name: "Starter 48h",
+    description: "Idéal pour lancer votre présence digitale rapidement",
+    price: 1490,
+    popular: true,
+    features: [
+      "Site one-page responsive",
+      "Design premium personnalisé",
+      "SEO de base optimisé",
+      "Formulaire de contact",
+      "Intégration Analytics",
+      "Livraison en 48h",
+    ],
+    cta: "Configurer mon offre",
+  },
+  {
+    id: "business",
+    name: "Business 72h",
+    description: "Pour les entreprises qui veulent performer",
+    price: 2990,
+    popular: false,
+    features: [
+      "Site multi-pages (5-10 pages)",
+      "Design premium sur-mesure",
+      "SEO avancé complet",
+      "Blog intégré",
+      "Intégrations tierces",
+      "CMS facile à utiliser",
+      "Livraison en 72h",
+    ],
+    cta: "Configurer mon offre",
+  },
+  {
+    id: "custom",
+    name: "Sur-mesure",
+    description: "Solution personnalisée pour vos besoins spécifiques",
+    price: null,
+    popular: false,
+    features: [
+      "Audit complet de vos besoins",
+      "Architecture sur-mesure",
+      "Fonctionnalités illimitées",
+      "Intégrations complexes",
+      "Support prioritaire",
+      "Accompagnement stratégique",
+    ],
+    cta: "Demander un devis",
+  },
+];
