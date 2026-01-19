@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd agency-app && npm run build",
+  "outputDirectory": "agency-app/.next",
+  "devCommand": "cd agency-app && npm run dev",
+  "installCommand": "cd agency-app && npm install"
+}
