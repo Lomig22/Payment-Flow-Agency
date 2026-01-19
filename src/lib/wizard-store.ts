@@ -90,7 +90,9 @@ export const useWizardStore = create<WizardState>((set, get) => ({
   getTotalPrice: () => {
     const state = get();
     const plan = pricingPlans.find((p) => p.id === state.selectedPlan);
-    const basePrice = plan?.price || 0;
+    
+    // Pour le plan custom (null), on retourne 0 et les options uniquement
+    const basePrice = plan?.price ?? 0;
 
     let oneTimeTotal = basePrice;
     let monthlyTotal = 0;

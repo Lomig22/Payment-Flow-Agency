@@ -93,6 +93,7 @@ export const pricingOptions = [
     label: "Chatbot IA",
     description: "Assistant conversationnel intelligent",
     price: 490,
+    priceType: "oneTime" as const,
     category: "tools",
   },
   {
@@ -101,6 +102,7 @@ export const pricingOptions = [
     label: "Intégration IA",
     description: "GPT, Claude, ou modèle custom",
     price: 790,
+    priceType: "oneTime" as const,
     category: "tools",
   },
   {
@@ -109,6 +111,7 @@ export const pricingOptions = [
     label: "API Custom",
     description: "Développement API sur-mesure",
     price: 690,
+    priceType: "oneTime" as const,
     category: "tools",
   },
   {
@@ -117,6 +120,7 @@ export const pricingOptions = [
     label: "Paiement Stripe",
     description: "Intégration paiement sécurisé",
     price: 290,
+    priceType: "oneTime" as const,
     category: "tools",
   },
   {
@@ -125,6 +129,7 @@ export const pricingOptions = [
     label: "Calendly",
     description: "Prise de RDV automatisée",
     price: 190,
+    priceType: "oneTime" as const,
     category: "tools",
   },
   {
@@ -133,7 +138,7 @@ export const pricingOptions = [
     label: "SEO Premium",
     description: "Optimisation SEO mensuelle",
     price: 490,
-    priceType: "monthly",
+    priceType: "monthly" as const,
     category: "marketing",
   },
   {
@@ -142,7 +147,7 @@ export const pricingOptions = [
     label: "Blog SEO",
     description: "Articles optimisés (4/mois)",
     price: 390,
-    priceType: "monthly",
+    priceType: "monthly" as const,
     category: "marketing",
   },
   {
@@ -151,7 +156,7 @@ export const pricingOptions = [
     label: "Réseaux Sociaux",
     description: "Gestion community management",
     price: 590,
-    priceType: "monthly",
+    priceType: "monthly" as const,
     category: "marketing",
   },
   {
@@ -160,7 +165,7 @@ export const pricingOptions = [
     label: "Publicité Ads",
     description: "Gestion campagnes Google/Meta",
     price: 690,
-    priceType: "monthly",
+    priceType: "monthly" as const,
     category: "marketing",
   },
   {
@@ -169,7 +174,7 @@ export const pricingOptions = [
     label: "Assurance Maintenance",
     description: "Support technique & mises à jour",
     price: 19,
-    priceType: "monthly",
+    priceType: "monthly" as const,
     category: "support",
   },
 ];
