@@ -328,8 +328,9 @@ p {
 
 @media (min-width: 1024px) {
   .hero-content {
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 5rem;
+    align-items: center;
   }
 }
 
@@ -446,7 +447,7 @@ p {
   font-size: 1.125rem;
   color: var(--color-text-secondary);
   margin-bottom: 2rem;
-  max-width: 540px;
+  max-width: 100%;
 }
 
 @media (min-width: 1024px) {
@@ -509,6 +510,13 @@ p {
   position: relative;
   display: flex;
   justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-visual {
+    justify-content: flex-end;
+    margin-left: 2rem;
+  }
 }
 
 .hero-mockup {
