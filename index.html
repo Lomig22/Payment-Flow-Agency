@@ -3,28 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Agence digitale premium à Paris. Création de sites web performants, SEO, marketing digital et automatisation IA. Plus de 150 clients satisfaits.">
-  <meta name="keywords" content="agence web paris, création site internet, agence digitale, marketing digital, référencement SEO">
-  <meta name="author" content="Agency Premium">
+  <meta name="description" content="Agence Web Stratège - Nous concevons des sites web et des systèmes digitaux qui génèrent des leads, pas juste du trafic. Sites web, SEO et marketing digital.">
+  <meta name="keywords" content="agence web, création site internet, SEO, marketing digital, génération de leads, conversion">
+  <meta name="author" content="Agence Web Stratège">
   
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
-  <meta property="og:title" content="Agency Premium | Agence Web & Marketing Digital Paris">
-  <meta property="og:description" content="Des sites web qui vendent. Du SEO qui performe. Du marketing qui scale.">
-  <meta property="og:image" content="images/og-image.jpg">
+  <meta property="og:title" content="Agence Web Stratège | Sites web qui convertissent">
+  <meta property="og:description" content="Nous concevons des sites web et des systèmes digitaux qui génèrent des leads, pas juste du trafic.">
   
-  <title>Agency Premium | Agence Web & Marketing Digital Paris</title>
+  <title>Agence Web Stratège | Sites web qui génèrent des leads</title>
   
   <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
   
   <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css">
-  
-  <!-- Preconnect -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
   <!-- Skip to content -->
@@ -33,17 +28,22 @@
   <!-- ============================================
        HEADER
        ============================================ -->
-  <header class="header">
+  <header class="header" id="header">
     <div class="container">
       <div class="header-content">
-        <a href="/" class="logo">Agency<span>.</span></a>
+        <a href="/" class="logo">Web<span>Stratège</span></a>
         
         <nav class="nav">
+          <a href="#probleme" class="nav-link">Problématique</a>
           <a href="#services" class="nav-link">Services</a>
-          <a href="#realisations" class="nav-link">Réalisations</a>
-          <a href="#contact" class="nav-link">Contact</a>
-          <a href="#contact" class="btn btn-primary btn-sm">Démarrer</a>
+          <a href="#temoignages" class="nav-link">Témoignages</a>
+          <a href="#projets" class="nav-link">Projets</a>
+          <a href="#methode" class="nav-link">Méthode</a>
         </nav>
+        
+        <div class="header-cta">
+          <a href="#contact" class="btn btn-primary">Réserver un RDV</a>
+        </div>
         
         <button class="mobile-menu-btn" aria-label="Menu">
           <span></span>
@@ -58,189 +58,273 @@
        HERO SECTION
        ============================================ -->
   <section class="hero" id="main-content">
-    <div class="hero-glow"></div>
-    <div class="grid-pattern" style="position: absolute; inset: 0; opacity: 0.3;"></div>
-    
-    <div class="container" style="position: relative; z-index: 10;">
+    <div class="container">
       <div class="hero-content">
         <!-- Text Content -->
         <div class="hero-text reveal">
-          <span class="badge">
+          <span class="hero-badge">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/>
-              <path d="M5 19l1 3 3-1-1-3-3 1z"/>
-              <path d="M19 5l-1-3-3 1 1 3 3-1z"/>
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
             </svg>
-            Agence digitale premium • Paris
+            Agence digitale orientée conversion
           </span>
           
-          <h1 class="hero-title">
-            Des sites web qui <span class="gradient-text">vendent.</span><br>
-            Du SEO qui <span class="gradient-text">performe.</span><br>
-            Du marketing qui <span class="gradient-text">scale.</span>
+          <h1>
+            Agence Web <span class="text-gradient">Stratège</span>
           </h1>
-          
           <p class="hero-subtitle">
-            Transformez votre présence digitale en <strong>machine de croissance</strong>.
-            Sites performants, acquisition qualifiée, résultats mesurables.
+            Nous concevons des sites web et des systèmes digitaux qui <strong>génèrent des leads</strong>, pas juste du trafic. Sites web, SEO et marketing digital pensés pour transformer vos visiteurs en clients.
           </p>
           
           <div class="hero-buttons">
             <a href="#contact" class="btn btn-primary btn-lg">
-              Nous contacter
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
               </svg>
+              Réserver un rendez-vous
             </a>
-            <a href="#services" class="btn btn-secondary btn-lg">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="5 3 19 12 5 21 5 3"/>
+            <a href="#contact" class="btn btn-secondary btn-lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
               </svg>
-              Découvrir nos services
+              Demander un devis
             </a>
           </div>
           
           <div class="hero-trust">
-            <div class="trust-item success">
+            <div class="trust-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="20 6 9 17 4 12"/>
               </svg>
-              <span>150+ clients satisfaits</span>
+              <span>+150 clients accompagnés</span>
             </div>
-            <div class="trust-item accent">
+            <div class="trust-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                <polyline points="20 6 9 17 4 12"/>
               </svg>
-              <span>Livraison 48-72h</span>
+              <span>ROI moyen x3</span>
             </div>
-            <div class="trust-item purple">
+            <div class="trust-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-                <polyline points="17 6 23 6 23 12"/>
+                <polyline points="20 6 9 17 4 12"/>
               </svg>
-              <span>ROI garanti</span>
+              <span>98% de satisfaction</span>
             </div>
           </div>
         </div>
         
         <!-- Hero Visual -->
         <div class="hero-visual reveal reveal-delay-2">
-          <!-- Dashboard Card -->
-          <div class="dashboard-card">
-            <div class="dashboard-header">
-              <div class="dashboard-dots">
-                <span class="dashboard-dot red"></span>
-                <span class="dashboard-dot yellow"></span>
-                <span class="dashboard-dot green"></span>
+          <div class="hero-mockup">
+            <div class="mockup-header">
+              <div class="mockup-dots">
+                <span class="mockup-dot red"></span>
+                <span class="mockup-dot yellow"></span>
+                <span class="mockup-dot green"></span>
               </div>
-              <div class="dashboard-url">
-                <span class="dashboard-url-dot"></span>
-                <span>votre-site.fr</span>
-              </div>
+              <div class="mockup-url">votre-site.fr</div>
             </div>
-            <div class="dashboard-body">
-              <div class="stats-row">
-                <div class="stat-card">
-                  <p class="stat-card-label">Visiteurs</p>
-                  <p class="stat-card-value">12.4k</p>
-                  <p class="stat-card-change success">+24%</p>
+            <div class="mockup-body">
+              <div class="mockup-stats">
+                <div class="mockup-stat">
+                  <p class="mockup-stat-value">+247%</p>
+                  <p class="mockup-stat-label">Leads</p>
                 </div>
-                <div class="stat-card">
-                  <p class="stat-card-label">Conversions</p>
-                  <p class="stat-card-value">847</p>
-                  <p class="stat-card-change accent">+18%</p>
+                <div class="mockup-stat">
+                  <p class="mockup-stat-value">+89%</p>
+                  <p class="mockup-stat-label">Trafic</p>
                 </div>
-                <div class="stat-card">
-                  <p class="stat-card-label">Revenus</p>
-                  <p class="stat-card-value">€34.2k</p>
-                  <p class="stat-card-change purple">+32%</p>
+                <div class="mockup-stat">
+                  <p class="mockup-stat-value">4.2s</p>
+                  <p class="mockup-stat-label">Temps page</p>
                 </div>
               </div>
-              <div class="chart-placeholder">
-                <div class="chart-bar" style="height: 40%;"></div>
-                <div class="chart-bar" style="height: 60%; animation-delay: 0.05s;"></div>
+              <div class="mockup-chart">
+                <div class="chart-bar" style="height: 30%;"></div>
                 <div class="chart-bar" style="height: 45%; animation-delay: 0.1s;"></div>
-                <div class="chart-bar" style="height: 80%; animation-delay: 0.15s;"></div>
-                <div class="chart-bar" style="height: 55%; animation-delay: 0.2s;"></div>
-                <div class="chart-bar" style="height: 90%; animation-delay: 0.25s;"></div>
-                <div class="chart-bar" style="height: 70%; animation-delay: 0.3s;"></div>
-                <div class="chart-bar" style="height: 85%; animation-delay: 0.35s;"></div>
-                <div class="chart-bar" style="height: 65%; animation-delay: 0.4s;"></div>
-                <div class="chart-bar" style="height: 95%; animation-delay: 0.45s;"></div>
+                <div class="chart-bar" style="height: 35%; animation-delay: 0.2s;"></div>
+                <div class="chart-bar" style="height: 60%; animation-delay: 0.3s;"></div>
+                <div class="chart-bar" style="height: 50%; animation-delay: 0.4s;"></div>
                 <div class="chart-bar" style="height: 75%; animation-delay: 0.5s;"></div>
-                <div class="chart-bar" style="height: 100%; animation-delay: 0.55s;"></div>
-              </div>
-              <div class="seo-status">
-                <div class="seo-bar">
-                  <span>Performance SEO : Excellente</span>
-                </div>
-                <div class="seo-check">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="20 6 9 17 4 12"/>
-                  </svg>
-                </div>
+                <div class="chart-bar" style="height: 65%; animation-delay: 0.6s;"></div>
+                <div class="chart-bar" style="height: 90%; animation-delay: 0.7s;"></div>
+                <div class="chart-bar" style="height: 80%; animation-delay: 0.8s;"></div>
+                <div class="chart-bar" style="height: 100%; animation-delay: 0.9s;"></div>
               </div>
             </div>
           </div>
           
-          <!-- Floating Icons -->
-          <div class="floating-icon top-right accent">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-            </svg>
-          </div>
-          <div class="floating-icon bottom-left purple">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="2" y1="12" x2="22" y2="12"/>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-            </svg>
-          </div>
-          <div class="floating-icon left success">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-              <polyline points="17 6 23 6 23 12"/>
-            </svg>
-          </div>
-          
-          <!-- Notification Popup -->
-          <div class="notification-popup">
-            <div class="notification-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <!-- Floating elements -->
+          <div class="hero-float top-right">
+            <div class="hero-float-icon green">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="20 6 9 17 4 12"/>
               </svg>
             </div>
-            <div class="notification-text">
-              <p>Nouvelle conversion !</p>
-              <span>Il y a 2 minutes</span>
+            <div class="hero-float-text">
+              <strong>Nouveau lead !</strong>
+              <span>Il y a 2 min</span>
+            </div>
+          </div>
+          
+          <div class="hero-float bottom-left">
+            <div class="hero-float-icon blue">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                <polyline points="17 6 23 6 23 12"/>
+              </svg>
+            </div>
+            <div class="hero-float-text">
+              <strong>+32% ce mois</strong>
+              <span>Conversions</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
-      <div class="scroll-mouse">
-        <div class="scroll-dot"></div>
+  </section>
+
+  <!-- ============================================
+       PROBLÉMATIQUE SECTION
+       ============================================ -->
+  <section class="section section-alt" id="probleme">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Le constat</span>
+        <h2>Pourquoi <span class="text-gradient">90%</span> des sites web ne convertissent pas ?</h2>
+        <p>La plupart des sites sont beaux mais inefficaces. Voici les erreurs les plus courantes.</p>
+      </div>
+      
+      <div class="problem-grid">
+        <div class="problem-card reveal reveal-delay-1">
+          <div class="problem-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="15" y1="9" x2="9" y2="15"/>
+              <line x1="9" y1="9" x2="15" y2="15"/>
+            </svg>
+          </div>
+          <h3>Pas de stratégie</h3>
+          <p>Un site sans objectif clair ne peut pas performer.</p>
+        </div>
+        
+        <div class="problem-card reveal reveal-delay-2">
+          <div class="problem-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              <line x1="9" y1="10" x2="15" y2="10"/>
+            </svg>
+          </div>
+          <h3>Mauvais message</h3>
+          <p>Vos visiteurs ne comprennent pas votre valeur ajoutée.</p>
+        </div>
+        
+        <div class="problem-card reveal reveal-delay-3">
+          <div class="problem-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <line x1="9" y1="9" x2="15" y2="15"/>
+              <line x1="15" y1="9" x2="9" y2="15"/>
+            </svg>
+          </div>
+          <h3>Aucun CTA clair</h3>
+          <p>Sans appel à l'action, pas de conversion possible.</p>
+        </div>
+        
+        <div class="problem-card reveal reveal-delay-4">
+          <div class="problem-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <line x1="9" y1="12" x2="15" y2="12"/>
+            </svg>
+          </div>
+          <h3>Aucune réassurance</h3>
+          <p>Vos visiteurs n'ont pas confiance et partent.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================
-       WHAT WE DO SECTION
+       SOLUTION SECTION
        ============================================ -->
-  <section class="section" id="services">
+  <section class="section" id="solution">
     <div class="container">
       <div class="section-header reveal">
-        <span class="badge">Ce que nous faisons</span>
-        <h2>Une expertise <span class="gradient-text">360°</span> pour votre croissance</h2>
-        <p>Des solutions digitales complètes, de la conception à l'acquisition, pour transformer votre business.</p>
+        <span class="badge">Notre approche</span>
+        <h2>Nous ne faisons pas <span class="text-gradient">"juste"</span> des sites web</h2>
+        <p>Nous construisons des systèmes digitaux pensés pour convertir vos visiteurs en clients.</p>
+      </div>
+      
+      <div class="solution-grid">
+        <div class="solution-card reveal reveal-delay-1">
+          <div class="solution-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
+            </svg>
+          </div>
+          <h3>Stratégie avant le design</h3>
+          <p>Nous analysons votre marché, vos concurrents et vos clients avant de dessiner la moindre maquette. Chaque élément a un objectif.</p>
+        </div>
+        
+        <div class="solution-card reveal reveal-delay-2">
+          <div class="solution-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Parcours utilisateur optimisé</h3>
+          <p>Chaque page guide naturellement vos visiteurs vers l'action souhaitée. Pas de friction, pas de confusion.</p>
+        </div>
+        
+        <div class="solution-card reveal reveal-delay-3">
+          <div class="solution-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <h3>Messages orientés business</h3>
+          <p>Nous écrivons des textes qui parlent à vos clients, pas à vous. Des messages clairs qui déclenchent l'action.</p>
+        </div>
+        
+        <div class="solution-card reveal reveal-delay-4">
+          <div class="solution-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </div>
+          <h3>Automatisations intégrées</h3>
+          <p>Prise de rendez-vous Calendly, formulaires intelligents, CRM... Tout est connecté pour maximiser vos conversions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SERVICES SECTION
+       ============================================ -->
+  <section class="section section-alt" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Nos expertises</span>
+        <h2>Des services <span class="text-gradient">complets</span> pour votre croissance</h2>
+        <p>Tout ce dont vous avez besoin pour transformer votre présence digitale.</p>
       </div>
       
       <div class="services-grid">
-        <!-- Service 1 -->
-        <div class="card service-card reveal reveal-delay-1">
+        <div class="service-card reveal reveal-delay-1">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
@@ -248,48 +332,22 @@
               <line x1="12" y1="17" x2="12" y2="21"/>
             </svg>
           </div>
-          <h3>
-            Création Web
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="7" y1="17" x2="17" y2="7"/>
-              <polyline points="7 7 17 7 17 17"/>
-            </svg>
-          </h3>
-          <p>Sites vitrines, e-commerce et applications web sur-mesure qui convertissent.</p>
-          <ul class="service-features">
-            <li>Design UI/UX premium</li>
-            <li>Développement sur-mesure</li>
-            <li>Optimisation performance</li>
-          </ul>
+          <h3>Création & refonte de site web</h3>
+          <p>Sites vitrines, e-commerce et landing pages optimisés pour la conversion.</p>
         </div>
         
-        <!-- Service 2 -->
-        <div class="card service-card reveal reveal-delay-2">
+        <div class="service-card reveal reveal-delay-2">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="11" cy="11" r="8"/>
               <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-              <line x1="11" y1="8" x2="11" y2="14"/>
-              <line x1="8" y1="11" x2="14" y2="11"/>
             </svg>
           </div>
-          <h3>
-            SEO & Visibilité
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="7" y1="17" x2="17" y2="7"/>
-              <polyline points="7 7 17 7 17 17"/>
-            </svg>
-          </h3>
+          <h3>SEO & visibilité Google</h3>
           <p>Stratégies de référencement pour dominer les résultats de recherche.</p>
-          <ul class="service-features">
-            <li>Audit SEO complet</li>
-            <li>Optimisation on-page</li>
-            <li>Netlinking premium</li>
-          </ul>
         </div>
         
-        <!-- Service 3 -->
-        <div class="card service-card reveal reveal-delay-3">
+        <div class="service-card reveal reveal-delay-3">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 20V10"/>
@@ -297,53 +355,243 @@
               <path d="M6 20v-4"/>
             </svg>
           </div>
-          <h3>
-            Marketing Digital
+          <h3>Marketing digital & acquisition</h3>
+          <p>Campagnes Google Ads, Meta Ads et stratégies d'acquisition rentables.</p>
+        </div>
+        
+        <div class="service-card reveal reveal-delay-4">
+          <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="7" y1="17" x2="17" y2="7"/>
-              <polyline points="7 7 17 7 17 17"/>
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
             </svg>
-          </h3>
-          <p>Campagnes d'acquisition et stratégies de croissance data-driven.</p>
-          <ul class="service-features">
-            <li>Google & Meta Ads</li>
-            <li>Email marketing</li>
-            <li>Automatisation IA</li>
-          </ul>
+          </div>
+          <h3>Automatisation & outils business</h3>
+          <p>CRM, email marketing, chatbots et workflows automatisés.</p>
+        </div>
+      </div>
+      
+      <div class="services-cta reveal">
+        <a href="#contact" class="btn btn-primary btn-lg">
+          Discutons de votre projet
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       TÉMOIGNAGES SECTION
+       ============================================ -->
+  <section class="section" id="temoignages">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Témoignages</span>
+        <h2>Ils nous ont fait <span class="text-gradient">confiance</span></h2>
+        <p>Découvrez ce que nos clients disent de notre collaboration.</p>
+      </div>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="testimonial-text">"Notre nouveau site génère 3x plus de demandes de devis qu'avant. L'équipe a vraiment compris nos enjeux business."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">ML</div>
+            <div class="testimonial-info">
+              <strong>Marie Laurent</strong>
+              <span>CEO, TechStart</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="testimonial-text">"Le SEO a transformé notre visibilité. On est passé de la page 5 à la première position sur nos mots-clés principaux."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">PD</div>
+            <div class="testimonial-info">
+              <strong>Pierre Dubois</strong>
+              <span>Fondateur, Immo Plus</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card reveal reveal-delay-3">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="testimonial-text">"Professionnalisme exemplaire. Ils ont su traduire notre vision en un site qui nous ressemble et qui convertit."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SC</div>
+            <div class="testimonial-info">
+              <strong>Sophie Chen</strong>
+              <span>Directrice, Wellness Lab</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="logos-section reveal">
+        <p>Ils nous ont fait confiance pour développer leur business en ligne</p>
+        <div class="logos-grid">
+          <span class="logo-item">TechStart</span>
+          <span class="logo-item">Immo Plus</span>
+          <span class="logo-item">Wellness Lab</span>
+          <span class="logo-item">FinanceFlow</span>
+          <span class="logo-item">EcoVert</span>
+          <span class="logo-item">DataPro</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================
-       STATS SECTION
+       PROJETS SECTION
        ============================================ -->
-  <section class="section stats-section">
+  <section class="section section-alt" id="projets">
     <div class="container">
       <div class="section-header reveal">
-        <p>Des <strong>résultats concrets</strong> qui parlent d'eux-mêmes</p>
+        <span class="badge">Portfolio</span>
+        <h2>Nos <span class="text-gradient">réalisations</span></h2>
+        <p>Découvrez quelques-uns de nos projets récents.</p>
       </div>
       
-      <div class="stats-grid">
-        <div class="stat-item reveal reveal-delay-1">
-          <p class="stat-value gradient-text" data-counter="150" data-prefix="+" data-suffix="">+0</p>
-          <p class="stat-label">Clients satisfaits</p>
-          <p class="stat-description">Entreprises accompagnées</p>
+      <div class="projects-grid">
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-image">
+            <span>🏢</span>
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Site vitrine</span>
+            <h3>Cabinet d'avocats Martin</h3>
+            <p>Refonte complète avec +180% de demandes de consultation.</p>
+          </div>
         </div>
-        <div class="stat-item reveal reveal-delay-2">
-          <p class="stat-value gradient-text" data-counter="98" data-suffix="%">0%</p>
-          <p class="stat-label">Satisfaction</p>
-          <p class="stat-description">Taux de recommandation</p>
+        
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-image">
+            <span>��</span>
+          </div>
+          <div class="project-content">
+            <span class="project-tag">E-commerce</span>
+            <h3>Boutique Bio Nature</h3>
+            <p>Création e-commerce avec un CA de 250k€ la première année.</p>
+          </div>
         </div>
-        <div class="stat-item reveal reveal-delay-3">
-          <p class="stat-value gradient-text" data-counter="48" data-suffix="h">0h</p>
-          <p class="stat-label">Livraison</p>
-          <p class="stat-description">Délai moyen de livraison</p>
+        
+        <div class="project-card reveal reveal-delay-3">
+          <div class="project-image">
+            <span>🏠</span>
+          </div>
+          <div class="project-content">
+            <span class="project-tag">SEO + Site</span>
+            <h3>Agence Immobilière Horizon</h3>
+            <p>Top 3 Google sur "immobilier + ville" en 6 mois.</p>
+          </div>
         </div>
-        <div class="stat-item reveal reveal-delay-4">
-          <p class="stat-value gradient-text" data-counter="3" data-prefix="x">x0</p>
-          <p class="stat-label">ROI moyen</p>
-          <p class="stat-description">Retour sur investissement</p>
+        
+        <div class="project-card reveal reveal-delay-4">
+          <div class="project-image">
+            <span>💼</span>
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Landing page</span>
+            <h3>SaaS FinanceFlow</h3>
+            <p>Landing page avec 12% de taux de conversion.</p>
+          </div>
+        </div>
+        
+        <div class="project-card reveal reveal-delay-5">
+          <div class="project-image">
+            <span>🏥</span>
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Site + Booking</span>
+            <h3>Centre Médical Santé+</h3>
+            <p>Système de réservation en ligne avec +300% de RDV.</p>
+          </div>
+        </div>
+        
+        <div class="project-card reveal reveal-delay-5">
+          <div class="project-image">
+            <span>🎓</span>
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Plateforme</span>
+            <h3>Formation Pro Academy</h3>
+            <p>Plateforme e-learning avec 2000+ inscrits.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="projects-cta reveal">
+        <a href="#contact" class="btn btn-secondary btn-lg">
+          Voir tous nos projets
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       MÉTHODE SECTION
+       ============================================ -->
+  <section class="section section-dark" id="methode">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Notre méthode</span>
+        <h2>Un processus <span class="text-gradient">éprouvé</span></h2>
+        <p>5 étapes pour transformer votre présence digitale.</p>
+      </div>
+      
+      <div class="process-grid">
+        <div class="process-step reveal reveal-delay-1">
+          <div class="process-number">1</div>
+          <h3>Analyse & Stratégie</h3>
+          <p>Audit complet de votre situation et définition des objectifs.</p>
+        </div>
+        
+        <div class="process-step reveal reveal-delay-2">
+          <div class="process-number">2</div>
+          <h3>Design & Conception</h3>
+          <p>Maquettes et prototypes validés ensemble.</p>
+        </div>
+        
+        <div class="process-step reveal reveal-delay-3">
+          <div class="process-number">3</div>
+          <h3>Développement</h3>
+          <p>Intégration et développement sur-mesure.</p>
+        </div>
+        
+        <div class="process-step reveal reveal-delay-4">
+          <div class="process-number">4</div>
+          <h3>Mise en ligne</h3>
+          <p>Lancement et optimisation technique.</p>
+        </div>
+        
+        <div class="process-step reveal reveal-delay-5">
+          <div class="process-number">5</div>
+          <h3>Suivi & Performance</h3>
+          <p>Analyse des résultats et améliorations continues.</p>
         </div>
       </div>
     </div>
@@ -354,86 +602,30 @@
        ============================================ -->
   <section class="section cta-section" id="contact">
     <div class="container">
-      <div class="card cta-card reveal">
+      <div class="cta-card reveal">
         <div class="cta-content">
-          <div class="cta-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/>
-              <path d="M5 19l1 3 3-1-1-3-3 1z"/>
-              <path d="M19 5l-1-3-3 1 1 3 3-1z"/>
-            </svg>
-          </div>
-          
-          <h2>Prêt à <span class="gradient-text">transformer</span> votre business ?</h2>
-          <p>Réservez un <strong>appel découverte gratuit</strong> pour discuter de votre projet et découvrir comment nous pouvons vous aider à atteindre vos objectifs.</p>
+          <h2>Prêt à transformer votre site en <span class="text-gradient">machine à leads</span> ?</h2>
+          <p>Réservez un appel découverte gratuit de 30 minutes pour discuter de votre projet et découvrir comment nous pouvons vous aider.</p>
           
           <div class="cta-buttons">
-            <a href="mailto:contact@agency-premium.fr" class="btn btn-primary btn-lg">
+            <a href="https://calendly.com" target="_blank" class="btn btn-primary btn-lg">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
                 <line x1="16" y1="2" x2="16" y2="6"/>
                 <line x1="8" y1="2" x2="8" y2="6"/>
                 <line x1="3" y1="10" x2="21" y2="10"/>
               </svg>
-              Réserver ma consultation
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
+              Réserver un rendez-vous Calendly
             </a>
-            <a href="#services" class="btn btn-secondary btn-lg">
-              Nos services
+            <a href="mailto:contact@webstratege.fr" class="btn btn-secondary btn-lg">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
               </svg>
+              Demander un devis
             </a>
           </div>
-          
-          <div class="cta-benefits">
-            <div class="cta-benefit">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-              <span>Appel de 30 min</span>
-            </div>
-            <div class="cta-benefit">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                <polyline points="22 4 12 14.01 9 11.01"/>
-              </svg>
-              <span>Sans engagement</span>
-            </div>
-            <div class="cta-benefit">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-              <span>100% gratuit</span>
-            </div>
-          </div>
         </div>
-      </div>
-      
-      <!-- Social Proof -->
-      <div class="reveal" style="margin-top: 3rem; text-align: center;">
-        <div style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-          <div style="display: flex;">
-            <div style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background: linear-gradient(135deg, rgba(99, 102, 241, 0.4), rgba(168, 85, 247, 0.4)); border: 2px solid var(--color-background); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 500; color: white;">A</div>
-            <div style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background: linear-gradient(135deg, rgba(99, 102, 241, 0.4), rgba(168, 85, 247, 0.4)); border: 2px solid var(--color-background); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 500; color: white; margin-left: -0.75rem;">B</div>
-            <div style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background: linear-gradient(135deg, rgba(99, 102, 241, 0.4), rgba(168, 85, 247, 0.4)); border: 2px solid var(--color-background); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 500; color: white; margin-left: -0.75rem;">C</div>
-            <div style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background: linear-gradient(135deg, rgba(99, 102, 241, 0.4), rgba(168, 85, 247, 0.4)); border: 2px solid var(--color-background); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 500; color: white; margin-left: -0.75rem;">D</div>
-            <div style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background: linear-gradient(135deg, rgba(99, 102, 241, 0.4), rgba(168, 85, 247, 0.4)); border: 2px solid var(--color-background); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 500; color: white; margin-left: -0.75rem;">E</div>
-          </div>
-          <div style="display: flex; gap: 0.25rem;">
-            <svg width="16" height="16" viewBox="0 0 20 20" fill="#eab308"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 20 20" fill="#eab308"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 20 20" fill="#eab308"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 20 20" fill="#eab308"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 20 20" fill="#eab308"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-        </div>
-        <p style="color: var(--color-foreground-muted); font-size: 0.875rem;">
-          Rejoint par <strong style="color: var(--color-foreground);">150+ entrepreneurs</strong> qui nous font confiance
-        </p>
       </div>
     </div>
   </section>
@@ -445,8 +637,8 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <a href="/" class="logo">Agency<span>.</span></a>
-          <p>Agence digitale premium spécialisée en création de sites web, SEO et marketing digital à Paris.</p>
+          <a href="/" class="logo">Web<span>Stratège</span></a>
+          <p>Agence digitale spécialisée dans la création de sites web orientés conversion, le SEO et le marketing digital.</p>
           <div class="social-links">
             <a href="#" class="social-link" aria-label="LinkedIn">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -473,27 +665,27 @@
         <div class="footer-links">
           <h4>Services</h4>
           <ul>
-            <li><a href="#">Création de site</a></li>
-            <li><a href="#">Référencement SEO</a></li>
-            <li><a href="#">Marketing Digital</a></li>
-            <li><a href="#">Automatisation</a></li>
+            <li><a href="#services">Création de site</a></li>
+            <li><a href="#services">Référencement SEO</a></li>
+            <li><a href="#services">Marketing Digital</a></li>
+            <li><a href="#services">Automatisation</a></li>
           </ul>
         </div>
         
         <div class="footer-links">
-          <h4>Entreprise</h4>
+          <h4>Agence</h4>
           <ul>
-            <li><a href="#">À propos</a></li>
-            <li><a href="#">Réalisations</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#solution">À propos</a></li>
+            <li><a href="#projets">Réalisations</a></li>
+            <li><a href="#temoignages">Témoignages</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
         
         <div class="footer-links">
           <h4>Contact</h4>
           <ul>
-            <li><a href="mailto:contact@agency-premium.fr">contact@agency-premium.fr</a></li>
+            <li><a href="mailto:contact@webstratege.fr">contact@webstratege.fr</a></li>
             <li><a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
             <li>Paris, France</li>
           </ul>
@@ -501,11 +693,10 @@
       </div>
       
       <div class="footer-bottom">
-        <p>© 2024 Agency Premium. Tous droits réservés.</p>
+        <p>© 2024 Web Stratège. Tous droits réservés.</p>
         <div class="footer-legal">
           <a href="#">Mentions légales</a>
           <a href="#">Politique de confidentialité</a>
-          <a href="#">CGV</a>
         </div>
       </div>
     </div>

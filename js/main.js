@@ -1,266 +1,191 @@
-/* ============================================
-   AGENCY PREMIUM - JAVASCRIPT
-   Animations & Interactions
-   ============================================ */
+/**
+ * Web Stratège - Main JavaScript
+ * Landing Page Premium - Animations & Interactions
+ */
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Initialize all modules
-  initScrollReveal();
-  initDashboard3D();
-  initCounterAnimation();
-  initMobileMenu();
-  initSmoothScroll();
-  initButtonEffects();
-});
-
-/* ============================================
-   SCROLL REVEAL ANIMATION
-   ============================================ */
-function initScrollReveal() {
-  const revealElements = document.querySelectorAll('.reveal');
   
-  const revealOnScroll = () => {
-    const windowHeight = window.innerHeight;
-    
-    revealElements.forEach(element => {
-      const elementTop = element.getBoundingClientRect().top;
-      const revealPoint = 100;
-      
-      if (elementTop < windowHeight - revealPoint) {
-        element.classList.add('active');
-      }
-    });
-  };
+  // ============================================
+  // HEADER SCROLL EFFECT
+  // ============================================
+  const header = document.getElementById('header');
   
-  // Initial check
-  revealOnScroll();
-  
-  // Throttled scroll listener
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        revealOnScroll();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
-}
-
-/* ============================================
-   3D DASHBOARD EFFECT
-   ============================================ */
-function initDashboard3D() {
-  const dashboard = document.querySelector('.dashboard-card');
-  const heroVisual = document.querySelector('.hero-visual');
-  
-  if (!dashboard || !heroVisual) return;
-  
-  let mouseX = 0;
-  let mouseY = 0;
-  let currentX = 0;
-  let currentY = 0;
-  
-  heroVisual.addEventListener('mousemove', (e) => {
-    const rect = heroVisual.getBoundingClientRect();
-    mouseX = (e.clientX - rect.left - rect.width / 2) / rect.width;
-    mouseY = (e.clientY - rect.top - rect.height / 2) / rect.height;
-  });
-  
-  heroVisual.addEventListener('mouseleave', () => {
-    mouseX = 0;
-    mouseY = 0;
-  });
-  
-  function animate() {
-    // Smooth interpolation
-    currentX += (mouseX - currentX) * 0.1;
-    currentY += (mouseY - currentY) * 0.1;
-    
-    const rotateX = currentY * -10;
-    const rotateY = currentX * 10;
-    
-    dashboard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    
-    requestAnimationFrame(animate);
-  }
-  
-  animate();
-}
-
-/* ============================================
-   COUNTER ANIMATION
-   ============================================ */
-function initCounterAnimation() {
-  const counters = document.querySelectorAll('[data-counter]');
-  
-  const animateCounter = (counter) => {
-    const target = parseInt(counter.getAttribute('data-counter'));
-    const suffix = counter.getAttribute('data-suffix') || '';
-    const prefix = counter.getAttribute('data-prefix') || '';
-    const duration = 2000;
-    const steps = 60;
-    const increment = target / steps;
-    let current = 0;
-    
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        counter.textContent = prefix + target + suffix;
-        clearInterval(timer);
-      } else {
-        counter.textContent = prefix + Math.floor(current) + suffix;
-      }
-    }, duration / steps);
-  };
-  
-  // Intersection Observer for counters
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-        entry.target.classList.add('counted');
-        animateCounter(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-  
-  counters.forEach(counter => observer.observe(counter));
-}
-
-/* ============================================
-   MOBILE MENU
-   ============================================ */
-function initMobileMenu() {
-  const menuBtn = document.querySelector('.mobile-menu-btn');
-  const nav = document.querySelector('.nav');
-  
-  if (!menuBtn || !nav) return;
-  
-  menuBtn.addEventListener('click', () => {
-    menuBtn.classList.toggle('active');
-    nav.classList.toggle('mobile-open');
-  });
-  
-  // Close menu on link click
-  nav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      menuBtn.classList.remove('active');
-      nav.classList.remove('mobile-open');
-    });
-  });
-}
-
-/* ============================================
-   SMOOTH SCROLL
-   ============================================ */
-function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        const headerOffset = 80;
-        const elementPosition = target.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-}
-
-/* ============================================
-   BUTTON EFFECTS
-   ============================================ */
-function initButtonEffects() {
-  const buttons = document.querySelectorAll('.btn');
-  
-  buttons.forEach(btn => {
-    // Ripple effect on click
-    btn.addEventListener('click', function(e) {
-      const rect = this.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      const ripple = document.createElement('span');
-      ripple.className = 'ripple';
-      ripple.style.left = x + 'px';
-      ripple.style.top = y + 'px';
-      
-      this.appendChild(ripple);
-      
-      setTimeout(() => ripple.remove(), 600);
-    });
-  });
-  
-  // Add ripple styles dynamically
-  const style = document.createElement('style');
-  style.textContent = `
-    .btn {
-      position: relative;
-      overflow: hidden;
-    }
-    .ripple {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.3);
-      transform: scale(0);
-      animation: ripple 0.6s linear;
-      pointer-events: none;
-    }
-    @keyframes ripple {
-      to {
-        transform: scale(4);
-        opacity: 0;
-      }
-    }
-  `;
-  document.head.appendChild(style);
-}
-
-/* ============================================
-   CARD HOVER EFFECTS
-   ============================================ */
-function initCardEffects() {
-  const cards = document.querySelectorAll('.card, .service-card, .pricing-card');
-  
-  cards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
-    });
-  });
-}
-
-/* ============================================
-   HEADER SCROLL EFFECT
-   ============================================ */
-window.addEventListener('scroll', () => {
-  const header = document.querySelector('.header');
-  if (header) {
+  function handleScroll() {
     if (window.scrollY > 50) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
   }
-});
+  
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
 
-/* ============================================
-   CHART ANIMATION
-   ============================================ */
-function initChartAnimation() {
+  // ============================================
+  // MOBILE MENU TOGGLE
+  // ============================================
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const nav = document.querySelector('.nav');
+  
+  if (mobileMenuBtn && nav) {
+    mobileMenuBtn.addEventListener('click', function() {
+      nav.classList.toggle('active');
+      mobileMenuBtn.classList.toggle('active');
+    });
+    
+    // Close menu when clicking on a link
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+      });
+    });
+  }
+
+  // ============================================
+  // SCROLL REVEAL ANIMATIONS
+  // ============================================
+  const revealElements = document.querySelectorAll('.reveal');
+  
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+  
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // ============================================
+  // SMOOTH SCROLL FOR ANCHOR LINKS
+  // ============================================
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+      
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        const headerHeight = header.offsetHeight;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // ============================================
+  // BUTTON RIPPLE EFFECT
+  // ============================================
+  document.querySelectorAll('.btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+      const rect = this.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const ripple = document.createElement('span');
+      ripple.style.cssText = `
+        position: absolute;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        transform: scale(0);
+        animation: ripple 0.6s linear;
+        pointer-events: none;
+        left: ${x}px;
+        top: ${y}px;
+        width: 100px;
+        height: 100px;
+        margin-left: -50px;
+        margin-top: -50px;
+      `;
+      
+      this.style.position = 'relative';
+      this.style.overflow = 'hidden';
+      this.appendChild(ripple);
+      
+      setTimeout(() => ripple.remove(), 600);
+    });
+  });
+
+  // Add ripple animation to document
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes ripple {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+    
+    .nav.active {
+      display: flex !important;
+      position: fixed;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background: white;
+      flex-direction: column;
+      padding: 1.5rem;
+      gap: 1rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      border-bottom: 1px solid #e2e8f0;
+      z-index: 999;
+    }
+    
+    .mobile-menu-btn.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .mobile-menu-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .mobile-menu-btn.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  `;
+  document.head.appendChild(style);
+
+  // ============================================
+  // COUNTER ANIMATION (if needed)
+  // ============================================
+  function animateCounter(element, target, duration = 2000) {
+    const start = 0;
+    const startTime = performance.now();
+    
+    function update(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeProgress = 1 - Math.pow(1 - progress, 3);
+      const current = Math.floor(start + (target - start) * easeProgress);
+      
+      element.textContent = current;
+      
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        element.textContent = target;
+      }
+    }
+    
+    requestAnimationFrame(update);
+  }
+
+  // ============================================
+  // CHART BARS ANIMATION
+  // ============================================
   const chartBars = document.querySelectorAll('.chart-bar');
   
-  const observer = new IntersectionObserver((entries) => {
+  const chartObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.style.animationPlayState = 'running';
@@ -270,9 +195,80 @@ function initChartAnimation() {
   
   chartBars.forEach(bar => {
     bar.style.animationPlayState = 'paused';
-    observer.observe(bar);
+    chartObserver.observe(bar);
   });
-}
 
-// Initialize chart animation
-document.addEventListener('DOMContentLoaded', initChartAnimation);
+  // ============================================
+  // FLOATING ELEMENTS PARALLAX
+  // ============================================
+  const floatingElements = document.querySelectorAll('.hero-float');
+  
+  if (floatingElements.length > 0) {
+    window.addEventListener('mousemove', (e) => {
+      const mouseX = e.clientX / window.innerWidth - 0.5;
+      const mouseY = e.clientY / window.innerHeight - 0.5;
+      
+      floatingElements.forEach((el, index) => {
+        const speed = (index + 1) * 10;
+        const x = mouseX * speed;
+        const y = mouseY * speed;
+        el.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    }, { passive: true });
+  }
+
+  // ============================================
+  // ACTIVE NAV LINK ON SCROLL
+  // ============================================
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  function updateActiveNav() {
+    const scrollPos = window.scrollY + 150;
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute('id');
+      
+      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${sectionId}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }
+  
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+
+  // ============================================
+  // TESTIMONIAL CARDS HOVER EFFECT
+  // ============================================
+  document.querySelectorAll('.testimonial-card, .service-card, .project-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-8px)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0)';
+    });
+  });
+
+  // ============================================
+  // PROCESS STEPS HOVER
+  // ============================================
+  document.querySelectorAll('.process-step').forEach(step => {
+    step.addEventListener('mouseenter', function() {
+      this.querySelector('.process-number').style.transform = 'scale(1.1)';
+    });
+    
+    step.addEventListener('mouseleave', function() {
+      this.querySelector('.process-number').style.transform = 'scale(1)';
+    });
+  });
+
+  console.log('🚀 Web Stratège - Site loaded successfully');
+});
