@@ -1,5 +1,5 @@
 /**
- * Web Stratège - Main JavaScript
+ * Flownex - Main JavaScript
  * Landing Page Premium - Animations & Interactions
  */
 
@@ -270,5 +270,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  console.log('🚀 Web Stratège - Site loaded successfully');
+  console.log('🚀 Flownex - Site loaded successfully');
 });
