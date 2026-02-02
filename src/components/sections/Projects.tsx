@@ -128,11 +128,11 @@ function ProjectCard({
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   
-  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 });
-  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 });
+  const mouseXSpring = useSpring(x, { stiffness: 400, damping: 25 });
+  const mouseYSpring = useSpring(y, { stiffness: 400, damping: 25 });
   
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["5deg", "-5deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-5deg", "5deg"]);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["7deg", "-7deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7deg", "7deg"]);
   
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
@@ -165,8 +165,8 @@ function ProjectCard({
     <motion.article
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.4, delay: index * 0.05 }}
       className="group"
     >
       <Link href={`/realisations/${project.id}`} aria-label={`Voir le projet ${project.title}`}>
@@ -179,7 +179,9 @@ function ProjectCard({
             rotateY,
             transformStyle: "preserve-3d",
           }}
-          className="relative h-full bg-glass border border-glass-border rounded-2xl overflow-hidden transition-all duration-500 hover:border-accent/40 hover:shadow-glow-sm"
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.2 }}
+          className="relative h-full bg-glass border border-glass-border rounded-2xl overflow-hidden transition-all duration-200 hover:border-accent/40 hover:shadow-glow"
         >
           {/* Project Visual */}
           <ProjectVisual 

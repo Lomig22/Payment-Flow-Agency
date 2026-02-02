@@ -26,15 +26,20 @@ export function Services() {
               key={service.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              whileHover={{ y: -4 }}
               className="group"
             >
-              <div className="h-full p-6 bg-glass border border-glass-border rounded-2xl backdrop-blur-xl transition-all duration-300 hover:bg-glass-hover hover:border-accent/30 flex items-start gap-4">
+              <div className="h-full p-6 bg-glass border border-glass-border rounded-2xl backdrop-blur-xl transition-all duration-200 hover:bg-glass-hover hover:border-accent/30 hover:shadow-glow-sm flex items-start gap-4">
                 {/* Icon */}
-                <div className="w-12 h-12 shrink-0 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
+                <motion.div 
+                  className="w-12 h-12 shrink-0 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ duration: 0.2 }}
+                >
                   <service.icon className="w-6 h-6" />
-                </div>
+                </motion.div>
 
                 {/* Content */}
                 <div className="flex-1">
@@ -48,7 +53,13 @@ export function Services() {
                     <span className="text-accent font-medium text-sm">
                       {service.price}
                     </span>
-                    <ArrowRight className="w-4 h-4 text-foreground-muted opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <motion.div
+                      initial={{ opacity: 0, x: -5 }}
+                      whileHover={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <ArrowRight className="w-4 h-4 text-foreground-muted group-hover:text-accent transition-colors" />
+                    </motion.div>
                   </div>
                 </div>
               </div>

@@ -310,32 +310,41 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10"
             >
-              <Link
-                href="/pricing"
-                className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent hover:bg-accent-hover text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-glow overflow-hidden w-full sm:w-auto"
-                aria-label="Découvrir nos offres et tarifs"
-              >
-                <span className="relative z-10">Voir les offres</span>
-                <ArrowRight className="w-5 h-5 relative z-10 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-r from-accent via-purple-500 to-accent bg-[length:200%_100%]"
-                  animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                  style={{ opacity: 0.5 }}
-                  aria-hidden="true"
-                />
-              </Link>
-              <Link
-                href="/contact"
-                className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-glass border border-glass-border text-foreground font-semibold rounded-xl transition-all duration-300 hover:bg-glass-hover hover:border-white/20 w-full sm:w-auto"
-                aria-label="Réserver une consultation gratuite"
-              >
-                <Play className="w-5 h-5 text-accent" aria-hidden="true" />
-                <span>Consultation gratuite</span>
-              </Link>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }} transition={{ duration: 0.15 }}>
+                <Link
+                  href="/pricing"
+                  className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent hover:bg-accent-hover text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-glow overflow-hidden w-full sm:w-auto"
+                  aria-label="Découvrir nos offres et tarifs"
+                >
+                  <span className="relative z-10">Voir les offres</span>
+                  <ArrowRight className="w-5 h-5 relative z-10 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-r from-accent via-purple-500 to-accent bg-[length:200%_100%]"
+                    animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                    style={{ opacity: 0.5 }}
+                    aria-hidden="true"
+                  />
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }} transition={{ duration: 0.15 }}>
+                <Link
+                  href="/contact"
+                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-glass border border-glass-border text-foreground font-semibold rounded-xl transition-all duration-200 hover:bg-glass-hover hover:border-white/20 hover:shadow-glow-sm w-full sm:w-auto"
+                  aria-label="Réserver une consultation gratuite"
+                >
+                  <motion.div
+                    animate={{ scale: [1, 1.1, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <Play className="w-5 h-5 text-accent" aria-hidden="true" />
+                  </motion.div>
+                  <span>Consultation gratuite</span>
+                </Link>
+              </motion.div>
             </motion.div>
 
             {/* Trust Indicators avec vraies données */}

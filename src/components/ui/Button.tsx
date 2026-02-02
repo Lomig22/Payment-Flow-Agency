@@ -35,17 +35,17 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      "relative inline-flex items-center justify-center font-medium rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden";
+      "relative inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden";
 
     const variants = {
       primary:
-        "bg-accent text-white hover:bg-accent-hover hover:shadow-glow-sm active:scale-[0.98]",
+        "bg-accent text-white hover:bg-accent-hover hover:shadow-glow-sm",
       secondary:
-        "bg-glass border border-glass-border text-foreground hover:bg-glass-hover hover:border-white/15 active:scale-[0.98]",
+        "bg-glass border border-glass-border text-foreground hover:bg-glass-hover hover:border-white/15",
       ghost:
-        "bg-transparent text-foreground-secondary hover:text-foreground hover:bg-glass active:scale-[0.98]",
+        "bg-transparent text-foreground-secondary hover:text-foreground hover:bg-glass",
       outline:
-        "bg-transparent border border-glass-border text-foreground hover:bg-glass hover:border-accent/50 active:scale-[0.98]",
+        "bg-transparent border border-glass-border text-foreground hover:bg-glass hover:border-accent/50",
     };
 
     const sizes = {
@@ -58,14 +58,20 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <motion.button
         ref={ref}
         type={type}
-        whileTap={{ scale: disabled ? 1 : 0.98 }}
+        whileHover={{ scale: disabled ? 1 : 1.02 }}
+        whileTap={{ scale: disabled ? 1 : 0.97 }}
+        transition={{ duration: 0.15, ease: "easeOut" }}
         className={clsx(baseStyles, variants[variant], sizes[size], className)}
         disabled={disabled || isLoading}
         onClick={onClick}
       >
         {/* Shine effect */}
         {variant === "primary" && (
-          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full hover:translate-x-full transition-transform duration-700" />
+          <motion.span 
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full"
+            whileHover={{ x: ["0%", "200%"] }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+          />
         )}
 
         {isLoading ? (

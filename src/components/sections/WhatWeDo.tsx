@@ -11,7 +11,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.05,
     },
   },
 };
@@ -21,7 +21,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5 },
+    transition: { duration: 0.4 },
   },
 };
 
@@ -53,14 +53,20 @@ export function WhatWeDo() {
             <motion.div
               key={service.id}
               variants={itemVariants}
+              whileHover={{ y: -8, scale: 1.02 }}
+              transition={{ duration: 0.2 }}
               className="group relative"
             >
               <Link href={`/#${service.id}`}>
-                <div className="h-full p-8 bg-glass border border-glass-border rounded-2xl backdrop-blur-xl transition-all duration-500 hover:bg-glass-hover hover:border-accent/30 hover:-translate-y-2 hover:shadow-glow-sm">
+                <div className="h-full p-8 bg-glass border border-glass-border rounded-2xl backdrop-blur-xl transition-all duration-200 hover:bg-glass-hover hover:border-accent/30 hover:shadow-glow-sm">
                   {/* Icon */}
-                  <div className="w-14 h-14 mb-6 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent group-hover:scale-110 group-hover:bg-accent/20 transition-all duration-300">
+                  <motion.div 
+                    className="w-14 h-14 mb-6 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent"
+                    whileHover={{ scale: 1.15, rotate: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <service.icon className="w-7 h-7" />
-                  </div>
+                  </motion.div>
 
                   {/* Title */}
                   <h3 className="text-xl font-semibold text-foreground mb-3 flex items-center gap-2">

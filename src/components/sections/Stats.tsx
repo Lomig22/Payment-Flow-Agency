@@ -108,11 +108,12 @@ export function Stats() {
                 key={stat.id}
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                whileHover={{ y: -5, scale: 1.02 }}
                 className="relative group text-center"
               >
                 {/* Card background */}
-                <div className="absolute inset-0 bg-glass rounded-2xl border border-glass-border opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-glass rounded-2xl border border-glass-border opacity-0 group-hover:opacity-100 transition-all duration-200" />
                 
                 <div className="relative p-6 lg:p-8">
                   {/* Animated Number */}
@@ -121,9 +122,9 @@ export function Stats() {
                     animate={isInView ? { scale: 1, opacity: 1 } : {}}
                     transition={{
                       type: "spring",
-                      stiffness: 150,
+                      stiffness: 200,
                       damping: 15,
-                      delay: index * 0.1 + 0.2,
+                      delay: index * 0.05 + 0.1,
                     }}
                     className="relative mb-4"
                   >
@@ -133,7 +134,7 @@ export function Stats() {
                           value={number} 
                           prefix={prefix} 
                           suffix={suffix}
-                          duration={2 + index * 0.2}
+                          duration={1.5 + index * 0.1}
                         />
                       ) : (
                         stat.value
@@ -142,7 +143,7 @@ export function Stats() {
                     
                     {/* Glow effect behind number */}
                     <div 
-                      className="absolute inset-0 blur-2xl bg-accent/20 scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
+                      className="absolute inset-0 blur-2xl bg-accent/20 scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-200" 
                       aria-hidden="true"
                     />
                   </motion.div>

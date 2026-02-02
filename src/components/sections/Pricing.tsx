@@ -29,26 +29,32 @@ export function Pricing() {
               key={plan.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              whileHover={{ y: -8, scale: 1.02 }}
               className={`relative group ${plan.popular ? "md:-mt-4 md:mb-4" : ""}`}
             >
               {/* Popular badge */}
               {plan.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-                  <div className="flex items-center gap-1 px-3 py-1 bg-accent text-white text-xs font-medium rounded-full">
+                <motion.div 
+                  className="absolute -top-3 left-1/2 -translate-x-1/2 z-10"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
+                >
+                  <div className="flex items-center gap-1 px-3 py-1 bg-accent text-white text-xs font-medium rounded-full shadow-lg">
                     <Star className="w-3 h-3 fill-current" />
                     Recommandé
                   </div>
-                </div>
+                </motion.div>
               )}
 
               <div
-                className={`h-full p-8 rounded-2xl backdrop-blur-xl transition-all duration-500 ${
+                className={`h-full p-8 rounded-2xl backdrop-blur-xl transition-all duration-200 ${
                   plan.popular
                     ? "bg-glass border-2 border-accent/50 shadow-glow-sm"
-                    : "bg-glass border border-glass-border hover:border-accent/30"
-                } hover:-translate-y-2`}
+                    : "bg-glass border border-glass-border hover:border-accent/30 hover:shadow-glow-sm"
+                }`}
               >
                 {/* Header */}
                 <div className="mb-6">
