@@ -1618,11 +1618,19 @@ p {
   }
   
   /* Centrer tout le contenu hero sur mobile */
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
   .hero-text {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    padding: 0 0.5rem;
   }
   
   .hero-text h1 {
@@ -1632,6 +1640,7 @@ p {
     margin-bottom: 1rem;
     color: var(--color-text);
     text-align: center;
+    width: 100%;
   }
   
   /* Chaque ligne du H1 sur sa propre ligne sur mobile */
@@ -1644,7 +1653,9 @@ p {
     line-height: 1.6;
     margin-bottom: 1.25rem;
     text-align: center;
-    max-width: 320px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .hero-buttons {
@@ -1676,6 +1687,7 @@ p {
     flex-direction: column;
     gap: 0.5rem;
     align-items: center;
+    width: 100%;
   }
   
   .trust-item {
@@ -1685,35 +1697,40 @@ p {
   /* Hero Visual Mobile - Afficher les îlots flottants */
   .hero-visual {
     margin-top: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
   
   .hero-mockup {
-    max-width: 280px;
+    max-width: 260px;
     margin: 0 auto;
   }
   
   /* Afficher les îlots flottants sur mobile avec taille réduite */
   .hero-float {
     display: flex;
-    transform: scale(0.7);
+    transform: scale(0.65);
   }
   
   .hero-float.top-right {
-    top: -15px;
-    right: -10px;
+    top: -20px;
+    right: 0;
   }
   
   .hero-float.bottom-left {
-    bottom: 40px;
-    left: -10px;
+    bottom: 30px;
+    left: 0;
   }
   
+  /* Badge Google sous l'animation, pas en surplomb */
   .hero-google-badge {
     position: relative;
     bottom: auto;
     left: auto;
     transform: none;
-    margin: 1.5rem auto 0;
+    margin: 1rem auto 0;
+    transform: scale(0.85);
   }
   
   /* Google Reviews Badge Mobile */
