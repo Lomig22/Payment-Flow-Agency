@@ -1,5 +1,5 @@
 /**
- * Flownex - Main JavaScript
+ * Payment Flow - Main JavaScript
  * Landing Page Premium - Animations & Interactions
  */
 
@@ -384,5 +384,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  console.log('🚀 Flownex - Site loaded successfully');
+  console.log('🚀 Payment Flow - Site loaded successfully');
 });
