@@ -968,11 +968,23 @@ p {
   overflow: hidden;
   box-shadow: var(--shadow-md);
   transition: all 0.3s ease;
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .project-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-xl);
+}
+
+.project-card img {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
 }
 
 .project-image {
