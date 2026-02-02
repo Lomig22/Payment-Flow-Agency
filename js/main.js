@@ -6,6 +6,46 @@
 document.addEventListener('DOMContentLoaded', function() {
   
   // ============================================
+  // COUNTDOWN TIMER - Urgency Bar
+  // ============================================
+  const countdownHours = document.getElementById('countdown-hours');
+  const countdownMinutes = document.getElementById('countdown-minutes');
+  const countdownSeconds = document.getElementById('countdown-seconds');
+  
+  if (countdownHours && countdownMinutes && countdownSeconds) {
+    // Récupérer ou créer la date de fin (24h à partir de la première visite)
+    let endTime = localStorage.getItem('countdownEndTime');
+    
+    if (!endTime) {
+      // Première visite : créer un compte à rebours de 24h
+      endTime = new Date().getTime() + (24 * 60 * 60 * 1000);
+      localStorage.setItem('countdownEndTime', endTime);
+    }
+    
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = endTime - now;
+      
+      if (distance <= 0) {
+        // Réinitialiser le compte à rebours
+        endTime = new Date().getTime() + (24 * 60 * 60 * 1000);
+        localStorage.setItem('countdownEndTime', endTime);
+      }
+      
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      countdownHours.textContent = hours.toString().padStart(2, '0');
+      countdownMinutes.textContent = minutes.toString().padStart(2, '0');
+      countdownSeconds.textContent = seconds.toString().padStart(2, '0');
+    }
+    
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  }
+  
+  // ============================================
   // ANIMATED NETWORK BACKGROUND
   // ============================================
   const canvas = document.getElementById('hero-canvas');

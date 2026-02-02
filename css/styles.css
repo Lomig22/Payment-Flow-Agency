@@ -207,11 +207,89 @@ p {
 }
 
 /* ============================================
+   URGENCY BAR - Compte à rebours
+   ============================================ */
+.urgency-bar {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 0.625rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+}
+
+.urgency-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.urgency-icon {
+  font-size: 1.125rem;
+}
+
+.urgency-text {
+  font-size: 0.875rem;
+}
+
+.urgency-text strong {
+  font-weight: 700;
+}
+
+.countdown {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.countdown-item {
+  display: flex;
+  align-items: baseline;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+
+.countdown-value {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  min-width: 1.25rem;
+  text-align: center;
+}
+
+.countdown-label {
+  font-size: 0.75rem;
+  opacity: 0.9;
+  margin-left: 2px;
+}
+
+.urgency-cta {
+  background: white;
+  color: var(--color-primary);
+  padding: 0.375rem 1rem;
+  border-radius: 100px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.urgency-cta:hover {
+  background: var(--color-background-alt);
+  transform: scale(1.05);
+}
+
+/* ============================================
    HEADER
    ============================================ */
 .header {
   position: fixed;
-  top: 0;
+  top: 40px;
   left: 0;
   right: 0;
   z-index: 1000;
@@ -307,7 +385,7 @@ p {
    HERO SECTION
    ============================================ */
 .hero {
-  padding: 8rem 0 5rem;
+  padding: 10rem 0 5rem;
   background: var(--gradient-light);
   position: relative;
   overflow: hidden;
@@ -318,7 +396,7 @@ p {
 
 @media (min-width: 768px) {
   .hero {
-    padding: 10rem 0 6rem;
+    padding: 12rem 0 6rem;
   }
 }
 
@@ -1584,7 +1662,48 @@ p {
     padding: 0 1rem;
   }
   
-  /* Header Mobile */
+  /* Urgency Bar Mobile */
+  .urgency-bar {
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .urgency-content {
+    gap: 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .urgency-icon {
+    display: none;
+  }
+  
+  .urgency-text {
+    font-size: 0.6875rem;
+    text-align: center;
+  }
+  
+  .countdown-item {
+    padding: 0.125rem 0.375rem;
+  }
+  
+  .countdown-value {
+    font-size: 0.75rem;
+    min-width: 1rem;
+  }
+  
+  .countdown-label {
+    font-size: 0.625rem;
+  }
+  
+  .urgency-cta {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.6875rem;
+  }
+  
+  /* Header Mobile - ajuster pour la barre d'urgence */
+  .header {
+    top: 32px;
+  }
+  
   .header-content {
     padding: 0.75rem 0;
   }
