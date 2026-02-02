@@ -126,6 +126,11 @@ p {
   -webkit-text-fill-color: transparent;
 }
 
+.text-highlight {
+  color: #f59e0b;
+  font-weight: 700;
+}
+
 /* ============================================
    CONTAINER
    ============================================ */
