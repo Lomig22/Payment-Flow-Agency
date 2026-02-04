@@ -3,8 +3,8 @@
    Landing Page Premium - Light Theme
    ============================================ */
 
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+/* Google Fonts - Loaded via preconnect in HTML for better performance */
+/* @import moved to HTML link tag for render-blocking optimization */
 
 /* CSS Variables */
 :root {
@@ -1728,8 +1728,11 @@ p {
   }
   
   .urgency-cta {
-    padding: 0.25rem 0.75rem;
-    font-size: 0.6875rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    min-height: 44px; /* Touch target accessibility */
+    display: inline-flex;
+    align-items: center;
   }
   
   /* Header Mobile - ajuster pour la barre d'urgence */
@@ -1746,8 +1749,9 @@ p {
   }
   
   .header-cta .btn {
-    padding: 0.5rem 1rem;
+    padding: 0.625rem 1rem;
     font-size: 0.8125rem;
+    min-height: 44px; /* Touch target accessibility */
   }
   
   /* Hero Badge Mobile */
@@ -1821,9 +1825,10 @@ p {
     width: auto;
     min-width: 200px;
     justify-content: center;
-    padding: 0.625rem 1.25rem;
-    font-size: 0.8125rem;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.875rem;
     font-weight: 600;
+    min-height: 48px; /* Minimum touch target size for accessibility */
   }
   
   .hero-buttons .btn svg {
