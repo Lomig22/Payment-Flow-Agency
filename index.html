@@ -52,6 +52,9 @@
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="apple-touch-icon" href="images/favicon.svg">
   
+  <!-- Calendly Badge Widget CSS -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  
   <!-- CSS with preload for critical resources -->
   <link rel="preload" href="css/styles.css" as="style">
   <link rel="stylesheet" href="css/styles.css">
@@ -964,5 +967,18 @@
 
   <!-- JavaScript - deferred for better performance -->
   <script src="js/main.js" defer></script>
+  
+  <!-- Calendly Badge Widget - Pop-up en bas à droite -->
+  <script type="text/javascript">
+    window.onload = function() { 
+      Calendly.initBadgeWidget({ 
+        url: 'https://calendly.com/paymentfloww?hide_landing_page_details=1&hide_gdpr_banner=1', 
+        text: 'Obtiens ton aperçu gratuit', 
+        color: '#6540e9', 
+        textColor: '#ffffff', 
+        branding: true 
+      }); 
+    }
+  </script>
 </body>
 </html>
