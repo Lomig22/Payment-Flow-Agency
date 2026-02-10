@@ -424,5 +424,50 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // ============================================
+  // CALENDLY MODAL
+  // ============================================
+  const calendlyModal = document.getElementById('calendly-modal');
+  const calendlyTriggers = document.querySelectorAll('.calendly-trigger');
+  const calendlyClose = document.querySelector('.calendly-modal-close');
+  const calendlyOverlay = document.querySelector('.calendly-modal-overlay');
+  
+  // Fonction pour ouvrir le modal
+  function openCalendlyModal() {
+    calendlyModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Empêcher le scroll
+  }
+  
+  // Fonction pour fermer le modal
+  function closeCalendlyModal() {
+    calendlyModal.style.display = 'none';
+    document.body.style.overflow = ''; // Réactiver le scroll
+  }
+  
+  // Ajouter les événements aux boutons trigger
+  calendlyTriggers.forEach(trigger => {
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      openCalendlyModal();
+    });
+  });
+  
+  // Fermer au clic sur le bouton close
+  if (calendlyClose) {
+    calendlyClose.addEventListener('click', closeCalendlyModal);
+  }
+  
+  // Fermer au clic sur l'overlay
+  if (calendlyOverlay) {
+    calendlyOverlay.addEventListener('click', closeCalendlyModal);
+  }
+  
+  // Fermer avec la touche Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && calendlyModal.style.display === 'flex') {
+      closeCalendlyModal();
+    }
+  });
+
   console.log('🚀 Payment Flow - Site loaded successfully');
 });
