@@ -976,9 +976,37 @@
         text: 'Obtiens ton aperçu gratuit', 
         color: '#6540e9', 
         textColor: '#ffffff', 
-        branding: true 
+        branding: false 
       }); 
     }
   </script>
+  
+  <!-- Styles personnalisés pour le widget Calendly Badge -->
+  <style>
+    .calendly-badge-widget {
+      bottom: 40px !important;
+      right: 20px !important;
+    }
+    .calendly-badge-widget .calendly-badge-content {
+      font-size: 16px !important;
+      padding: 16px 28px !important;
+      border-radius: 50px !important;
+      box-shadow: 0 8px 30px rgba(101, 64, 233, 0.4) !important;
+      font-weight: 600 !important;
+    }
+    @media (max-width: 639px) {
+      .calendly-badge-widget {
+        bottom: 20px !important;
+        right: 10px !important;
+        left: 10px !important;
+      }
+      .calendly-badge-widget .calendly-badge-content {
+        font-size: 14px !important;
+        padding: 14px 20px !important;
+        width: 100% !important;
+        text-align: center !important;
+      }
+    }
+  </style>
 </body>
 </html>
