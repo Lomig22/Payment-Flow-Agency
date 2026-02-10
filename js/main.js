@@ -518,5 +518,59 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  // Gérer la soumission du formulaire de contact
+  const contactForm = document.getElementById('contact-form');
+  const contactSuccess = document.getElementById('contact-success');
+  const successCloseBtn = document.querySelector('.success-close');
+  
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Récupérer les données du formulaire
+      const formData = new FormData(contactForm);
+      
+      // Envoyer le formulaire via fetch
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          // Masquer le formulaire
+          contactForm.style.display = 'none';
+          // Afficher le message de succès
+          if (contactSuccess) {
+            contactSuccess.style.display = 'block';
+          }
+          // Réinitialiser le formulaire
+          contactForm.reset();
+        } else {
+          alert('Une erreur est survenue. Veuillez réessayer.');
+        }
+      })
+      .catch(error => {
+        console.error('Erreur:', error);
+        alert('Une erreur est survenue. Veuillez réessayer.');
+      });
+    });
+  }
+  
+  // Fermer le modal après confirmation
+  if (successCloseBtn) {
+    successCloseBtn.addEventListener('click', function() {
+      if (contactSuccess) {
+        contactSuccess.style.display = 'none';
+      }
+      if (contactForm) {
+        contactForm.style.display = 'block';
+      }
+      closeContactModal();
+    });
+  }
+
   console.log('🚀 Payment Flow - Site loaded successfully');
 });
