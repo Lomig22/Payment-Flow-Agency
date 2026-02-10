@@ -469,5 +469,54 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  // ============================================
+  // CONTACT FORM MODAL
+  // ============================================
+  const contactModal = document.getElementById('contact-modal');
+  const contactTriggers = document.querySelectorAll('.contact-trigger');
+  const contactClose = document.querySelector('.contact-modal-close');
+  const contactOverlay = document.querySelector('.contact-modal-overlay');
+  
+  // Fonction pour ouvrir le modal contact
+  function openContactModal() {
+    if (contactModal) {
+      contactModal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+  }
+  
+  // Fonction pour fermer le modal contact
+  function closeContactModal() {
+    if (contactModal) {
+      contactModal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  }
+  
+  // Ajouter les événements aux boutons trigger
+  contactTriggers.forEach(trigger => {
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      openContactModal();
+    });
+  });
+  
+  // Fermer au clic sur le bouton close
+  if (contactClose) {
+    contactClose.addEventListener('click', closeContactModal);
+  }
+  
+  // Fermer au clic sur l'overlay
+  if (contactOverlay) {
+    contactOverlay.addEventListener('click', closeContactModal);
+  }
+  
+  // Fermer avec la touche Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && contactModal && contactModal.style.display === 'flex') {
+      closeContactModal();
+    }
+  });
+
   console.log('🚀 Payment Flow - Site loaded successfully');
 });
