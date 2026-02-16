@@ -1747,9 +1747,9 @@ p {
   }
   
   .header-content {
-    padding: 0.5rem 0;
+    padding: 0.25rem 0 0.5rem;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     min-height: 48px;
     box-sizing: border-box;
@@ -1757,16 +1757,12 @@ p {
   
   .logo {
     font-size: 1.25rem;
-    display: flex;
-    align-items: center;
     line-height: 1;
   }
   
-  /* Menu hamburger centré verticalement */
-  .mobile-menu-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  /* Menu hamburger aligné en bas */
+  .mobile-menu-btn {
+    padding-bottom: 0;
   }
   
   .header-cta .btn {
@@ -1787,7 +1783,7 @@ p {
   
   /* Hero Mobile - padding augmenté pour éviter le header */
   .hero {
-    padding: 9rem 0 2rem;
+    padding: 10rem 0 2rem;
     min-height: auto;
     overflow: hidden;
   }
