@@ -1747,11 +1747,24 @@ p {
   }
   
   .header-content {
-    padding: 0.75rem 0;
+    padding: 0.875rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 56px;
   }
   
   .logo {
     font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Menu hamburger centré verticalement */
+  .mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .header-cta .btn {
@@ -1772,7 +1785,7 @@ p {
   
   /* Hero Mobile - padding augmenté pour éviter le header */
   .hero {
-    padding: 7.5rem 0 2rem;
+    padding: 8.5rem 0 2rem;
     min-height: auto;
     overflow: hidden;
   }
