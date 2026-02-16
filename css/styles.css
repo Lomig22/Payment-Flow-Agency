@@ -1760,29 +1760,19 @@ p {
     min-height: 44px; /* Touch target accessibility */
   }
   
-  /* Hero Badge Mobile - AFFICHER le badge violet */
+  /* Hero Badge Mobile - design original visible */
   .hero-badge {
     display: inline-flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    font-size: 0.6875rem;
-    padding: 0.375rem 0.75rem;
-    margin-bottom: 0.75rem;
-    background: var(--color-primary);
-    color: white;
-    border: none;
-    border-radius: 50px;
-    box-shadow: 0 2px 8px rgba(101, 64, 233, 0.3);
+    font-size: 0.75rem;
+    padding: 0.5rem 0.875rem;
+    margin-bottom: 1rem;
+    background: var(--color-primary-light);
+    border: 1px solid var(--color-primary);
   }
   
-  .hero-badge .badge-icon {
-    width: 14px;
-    height: 14px;
-  }
-  
-  /* Hero Mobile */
+  /* Hero Mobile - padding augmenté pour éviter le header */
   .hero {
-    padding: 5rem 0 2.5rem;
+    padding: 6.5rem 0 2.5rem;
     min-height: auto;
   }
   
@@ -1868,15 +1858,16 @@ p {
     font-size: 0.75rem;
   }
   
-  /* Hero Visual Mobile - Animation réduite pour voir tout le dashboard */
+  /* Hero Visual Mobile - Réduit pour voir tout le dashboard */
   .hero-visual {
     margin-top: 1rem;
     width: 100%;
     display: flex;
     justify-content: center;
     position: relative;
-    transform: scale(0.75);
+    transform: scale(0.65);
     transform-origin: top center;
+    margin-bottom: -3rem;
   }
   
   .hero-mockup {
@@ -1885,30 +1876,30 @@ p {
     position: relative;
   }
   
-  /* Îlots flottants sur mobile - proportionnels au scale global */
+  /* Îlots flottants sur mobile - aux extrémités comme sur desktop */
   .hero-float {
     display: flex;
     opacity: 0.9;
   }
   
   .hero-float.top-right {
-    top: 10px;
-    right: 10px;
+    top: -20px;
+    right: -60px;
   }
   
   .hero-float.bottom-left {
-    bottom: 40px;
-    left: 10px;
+    bottom: 20px;
+    left: -60px;
   }
   
-  /* Badge Google - petit et flottant */
+  /* Badge Google - aux extrémités comme sur desktop */
   .hero-google-badge {
     position: absolute;
-    bottom: 20px;
-    right: 30px;
+    bottom: 60px;
+    right: -40px;
     left: auto;
-    transform: scale(0.7);
-    transform-origin: bottom right;
+    transform: scale(0.55);
+    transform-origin: center right;
     margin: 0;
   }
   
