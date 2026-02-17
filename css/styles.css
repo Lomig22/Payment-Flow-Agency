@@ -245,7 +245,7 @@ p {
 .urgency-bar {
   background: var(--gradient-primary);
   color: white;
-  padding: 0.625rem 1rem;
+  padding: 0.375rem 1rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -1900,8 +1900,8 @@ p {
   
   /* Urgency Bar Mobile - hauteur fixe pour calcul header */
   .urgency-bar {
-    padding: 0.5rem 0.75rem;
-    min-height: 44px;
+    padding: 0.25rem 0.5rem;
+    min-height: 32px;
     position: fixed;
     top: 0;
     left: 0;
@@ -1951,7 +1951,7 @@ p {
   
   /* Header Mobile - positionné SOUS la barre d'urgence avec espace */
   .header {
-    top: 44px;
+    top: 32px;
     padding: 0.5rem 0 0 !important;
   }
   
