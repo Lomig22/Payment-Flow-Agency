@@ -1236,6 +1236,7 @@ p {
   justify-content: center;
   gap: 0.5rem;
   margin-top: 1.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .carousel-dot {
