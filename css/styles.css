@@ -1360,6 +1360,8 @@ p {
   padding: 0.75rem;
   border-radius: 8px;
   margin-top: 0.5rem;
+  position: relative;
+  z-index: 15;
 }
 
 .testimonials-track .testimonial-card .card-inner:hover {
