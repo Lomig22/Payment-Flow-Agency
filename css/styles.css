@@ -1268,6 +1268,15 @@ p {
   max-height: 72px;
 }
 
+.testimonial-text.text-small {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.testimonial-text.text-small.truncated {
+  max-height: 90px;
+}
+
 .testimonial-text.truncated::after {
   content: '';
   position: absolute;
