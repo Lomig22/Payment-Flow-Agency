@@ -269,6 +269,10 @@ document.addEventListener('DOMContentLoaded', function() {
       startAutoPlay();
     }
 
+    function stopAutoPlay() {
+      clearInterval(autoPlayTimer);
+    }
+
     nextBtn.addEventListener('click', function() {
       goNext();
       resetAutoPlay();
@@ -288,6 +292,9 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', updateCarousel);
     updateCarousel();
     startAutoPlay();
+
+    // Expose stopAutoPlay globally
+    window.stopCarouselAutoPlay = stopAutoPlay;
   }
 
   // Toggle text for long testimonials
@@ -299,6 +306,10 @@ document.addEventListener('DOMContentLoaded', function() {
       textEl.classList.add('expanded');
       cardInner.classList.add('expanded');
       btn.textContent = '... voir moins';
+      // Stop carousel auto-rotation when expanding text
+      if (window.stopCarouselAutoPlay) {
+        window.stopCarouselAutoPlay();
+      }
     } else {
       textEl.classList.add('truncated');
       textEl.classList.remove('expanded');
