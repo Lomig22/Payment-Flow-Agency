@@ -1956,12 +1956,14 @@ p {
   }
   
   .header-content {
-    padding: 0.75rem 0 !important;
+    padding: 0.75rem 1rem !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
     min-height: 56px;
     box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 100%;
   }
   
   .logo {
