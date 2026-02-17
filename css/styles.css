@@ -1176,6 +1176,7 @@ p {
   height: 220px;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 @media (min-width: 768px) {
@@ -1252,7 +1253,7 @@ p {
 }
 
 .testimonial-card {
-  transition: all 0.3s ease;
+  transition: none;
 }
 
 .testimonial-text {
@@ -1262,7 +1263,7 @@ p {
 }
 
 .testimonial-text.truncated {
-  max-height: 60px;
+  max-height: 72px;
 }
 
 .testimonial-text.truncated::after {
@@ -1302,9 +1303,12 @@ p {
 .card-inner.expanded {
   height: auto;
   min-height: 220px;
+  position: relative;
+  z-index: 10;
+  box-shadow: var(--shadow-xl);
 }
 
-.testimonial-card:hover {
+.testimonials-track .testimonial-card .card-inner:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-xl);
 }
