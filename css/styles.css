@@ -1741,18 +1741,18 @@ p {
     white-space: nowrap;
   }
   
-  /* Header Mobile - positionné SOUS la barre d'urgence */
+  /* Header Mobile - positionné SOUS la barre d'urgence avec espace */
   .header {
     top: 40px;
-    padding: 0 0 !important;
+    padding: 0.5rem 0 0 !important;
   }
   
   .header-content {
-    padding: 0 0 0.4rem !important;
+    padding: 0 0 0.5rem !important;
     display: flex !important;
     align-items: flex-end !important;
     justify-content: space-between !important;
-    min-height: 44px;
+    min-height: 48px;
     box-sizing: border-box;
   }
   
