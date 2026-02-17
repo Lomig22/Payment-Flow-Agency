@@ -1279,15 +1279,16 @@ p {
 
 .card-inner .voir-plus-inline {
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 1rem;
   right: 1.5rem;
-  background: none;
+  background: white;
   border: none;
   color: var(--color-primary);
   font-size: 0.8125rem;
   font-weight: 500;
   cursor: pointer;
-  padding: 0;
+  padding: 0.25rem 0.5rem;
+  z-index: 5;
 }
 
 .card-inner .voir-plus-inline:hover {
@@ -1334,6 +1335,25 @@ p {
   position: relative;
   z-index: 10;
   box-shadow: var(--shadow-xl);
+}
+
+.card-inner.expanded .testimonial-text {
+  background: white;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin: -0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-inner.expanded .voir-plus-inline {
+  position: relative;
+  bottom: auto;
+  right: auto;
+  display: block;
+  text-align: right;
+  margin-top: 0.5rem;
+  padding: 0;
+  background: none;
 }
 
 .testimonials-track .testimonial-card .card-inner:hover {
