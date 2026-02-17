@@ -1744,25 +1744,28 @@ p {
   /* Header Mobile - positionné SOUS la barre d'urgence */
   .header {
     top: 40px;
+    padding: 0 0 !important;
   }
   
   .header-content {
-    padding: 0.25rem 0 0.5rem;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    min-height: 48px;
+    padding: 0 0 0.4rem !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: space-between !important;
+    min-height: 44px;
     box-sizing: border-box;
   }
   
   .logo {
     font-size: 1.25rem;
     line-height: 1;
+    margin-bottom: 0;
   }
   
   /* Menu hamburger aligné en bas */
   .mobile-menu-btn {
     padding-bottom: 0;
+    margin-bottom: 0;
   }
   
   .header-cta .btn {
@@ -1783,7 +1786,7 @@ p {
   
   /* Hero Mobile - padding augmenté pour éviter le header */
   .hero {
-    padding: 10rem 0 2rem;
+    padding: 7rem 0 2rem;
     min-height: auto;
     overflow: hidden;
   }
