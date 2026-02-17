@@ -310,6 +310,8 @@ p {
   font-size: 0.8125rem;
   font-weight: 600;
   transition: all 0.2s;
+  border: none;
+  cursor: pointer;
 }
 
 .urgency-cta:hover {
