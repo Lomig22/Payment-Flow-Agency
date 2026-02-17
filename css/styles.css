@@ -2262,10 +2262,32 @@ p {
   /* Testimonials Mobile - Carousel */
   .testimonials-carousel {
     padding: 0 2.5rem;
+    overflow: visible;
   }
   
   .testimonial-text {
     font-size: 0.9375rem;
+  }
+  
+  .card-inner.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    max-width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 1000;
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  }
+  
+  .card-inner.expanded .testimonial-text {
+    max-height: none;
+    overflow: visible;
   }
   
   /* Projects Mobile - Scroll horizontal */
