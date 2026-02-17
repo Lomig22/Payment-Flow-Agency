@@ -264,14 +264,18 @@ document.addEventListener('DOMContentLoaded', function() {
       autoPlayTimer = setInterval(goNext, 7000);
     }
 
+    function stopAutoPlay() {
+      clearInterval(autoPlayTimer);
+    }
+
     function resetAutoPlay() {
       clearInterval(autoPlayTimer);
       startAutoPlay();
     }
 
-    function stopAutoPlay() {
-      clearInterval(autoPlayTimer);
-    }
+    // Expose functions globally for toggleText
+    window.carouselStopAutoPlay = stopAutoPlay;
+    window.carouselStartAutoPlay = resetAutoPlay;
 
     nextBtn.addEventListener('click', function() {
       goNext();
@@ -292,29 +296,26 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', updateCarousel);
     updateCarousel();
     startAutoPlay();
-
-    // Expose stopAutoPlay globally
-    window.stopCarouselAutoPlay = stopAutoPlay;
   }
 
   // Toggle text for long testimonials
   window.toggleText = function(btn) {
-    const textEl = btn.previousElementSibling;
+    const textEl = btn.parentElement;
     const cardInner = btn.closest('.card-inner');
     if (textEl.classList.contains('truncated')) {
       textEl.classList.remove('truncated');
       textEl.classList.add('expanded');
       cardInner.classList.add('expanded');
       btn.textContent = '... voir moins';
-      // Stop carousel auto-rotation when expanding text
-      if (window.stopCarouselAutoPlay) {
-        window.stopCarouselAutoPlay();
-      }
+      // Stop autoplay when expanded
+      if (window.carouselStopAutoPlay) window.carouselStopAutoPlay();
     } else {
       textEl.classList.add('truncated');
       textEl.classList.remove('expanded');
       cardInner.classList.remove('expanded');
       btn.textContent = '... voir plus';
+      // Restart autoplay when collapsed
+      if (window.carouselStartAutoPlay) window.carouselStartAutoPlay();
     }
   };
 
