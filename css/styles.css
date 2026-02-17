@@ -1372,7 +1372,7 @@ p {
 }
 
 .card-inner.expanded .text-footer .review-date {
-  align-self: flex-start;
+  display: none;
 }
 
 .testimonials-track .testimonial-card .card-inner:hover {
