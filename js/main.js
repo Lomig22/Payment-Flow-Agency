@@ -300,8 +300,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Toggle text for long testimonials
   window.toggleText = function(btn) {
-    const textEl = btn.parentElement;
     const cardInner = btn.closest('.card-inner');
+    const textEl = cardInner.querySelector('.testimonial-text');
     if (textEl.classList.contains('truncated')) {
       textEl.classList.remove('truncated');
       textEl.classList.add('expanded');
