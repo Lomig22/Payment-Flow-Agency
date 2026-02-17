@@ -14,11 +14,12 @@ document.addEventListener('DOMContentLoaded', function() {
   
   if (countdownHours && countdownMinutes && countdownSeconds) {
     // Récupérer ou créer la date de fin (3h04 à partir de la première visite)
+    const maxDuration = (3 * 60 * 60 * 1000) + (4 * 60 * 1000);
     let endTime = localStorage.getItem('countdownEndTime');
     
-    if (!endTime) {
-      // Première visite : créer un compte à rebours de 3h04
-      endTime = new Date().getTime() + (3 * 60 * 60 * 1000) + (4 * 60 * 1000);
+    if (!endTime || (endTime - new Date().getTime()) > maxDuration) {
+      // Première visite ou ancien timer trop long : créer un compte à rebours de 3h04
+      endTime = new Date().getTime() + maxDuration;
       localStorage.setItem('countdownEndTime', endTime);
     }
     
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       if (distance <= 0) {
         // Réinitialiser le compte à rebours
-        endTime = new Date().getTime() + (3 * 60 * 60 * 1000) + (4 * 60 * 1000);
+        endTime = new Date().getTime() + maxDuration;
         localStorage.setItem('countdownEndTime', endTime);
       }
       
