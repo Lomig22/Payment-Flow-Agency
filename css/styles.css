@@ -1343,8 +1343,10 @@ p {
 }
 
 .card-inner.expanded .voir-plus-inline {
-  display: inline;
-  margin-left: 0.25rem;
+  display: block;
+  margin-left: 0;
+  color: var(--color-primary);
+  font-weight: 600;
 }
 
 .card-inner .text-footer {
