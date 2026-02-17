@@ -301,8 +301,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Toggle text for long testimonials
   window.toggleText = function(btn) {
     const cardInner = btn.closest('.card-inner');
-    const wrapper = btn.closest('.testimonial-text-wrapper');
-    const textEl = wrapper ? wrapper.querySelector('.testimonial-text') : cardInner.querySelector('.testimonial-text');
+    const textEl = cardInner.querySelector('.testimonial-text');
     if (textEl.classList.contains('truncated')) {
       textEl.classList.remove('truncated');
       textEl.classList.add('expanded');
@@ -319,6 +318,23 @@ document.addEventListener('DOMContentLoaded', function() {
       if (window.carouselStartAutoPlay) window.carouselStartAutoPlay();
     }
   };
+
+  // Close expanded text when clicking outside
+  document.addEventListener('click', function(e) {
+    const expandedCard = document.querySelector('.card-inner.expanded');
+    if (expandedCard && !expandedCard.contains(e.target)) {
+      const textEl = expandedCard.querySelector('.testimonial-text');
+      const btn = expandedCard.querySelector('.voir-plus-inline');
+      if (textEl && btn) {
+        textEl.classList.add('truncated');
+        textEl.classList.remove('expanded');
+        expandedCard.classList.remove('expanded');
+        btn.textContent = '... voir plus';
+        // Restart autoplay
+        if (window.carouselStartAutoPlay) window.carouselStartAutoPlay();
+      }
+    }
+  });
 
   // ============================================
   // SCROLL REVEAL ANIMATIONS
