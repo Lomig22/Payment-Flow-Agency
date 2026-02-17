@@ -298,12 +298,12 @@ document.addEventListener('DOMContentLoaded', function() {
       textEl.classList.remove('truncated');
       textEl.classList.add('expanded');
       cardInner.classList.add('expanded');
-      btn.textContent = '... voir moins';
+      btn.textContent = 'voir moins';
     } else {
       textEl.classList.add('truncated');
       textEl.classList.remove('expanded');
       cardInner.classList.remove('expanded');
-      btn.textContent = '... voir plus';
+      btn.textContent = 'voir plus';
     }
   };
 

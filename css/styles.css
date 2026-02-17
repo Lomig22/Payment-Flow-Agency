@@ -1270,11 +1270,28 @@ p {
 
 .testimonial-text.text-small {
   font-size: 0.8125rem;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .testimonial-text.text-small.truncated {
-  max-height: 90px;
+  max-height: 100px;
+}
+
+.card-inner .voir-plus-inline {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+}
+
+.card-inner .voir-plus-inline:hover {
+  text-decoration: underline;
 }
 
 .testimonial-text.truncated::after {
