@@ -1951,11 +1951,11 @@ p {
   }
   
   .header-content {
-    padding: 0 0 0.5rem !important;
+    padding: 0.5rem 0 0.75rem !important;
     display: flex !important;
-    align-items: flex-end !important;
+    align-items: center !important;
     justify-content: space-between !important;
-    min-height: 48px;
+    min-height: 60px;
     box-sizing: border-box;
   }
   
@@ -1989,7 +1989,7 @@ p {
   
   /* Hero Mobile - padding augmenté pour éviter le header */
   .hero {
-    padding: 7rem 0 2rem;
+    padding: 8rem 0 2rem;
     min-height: auto;
     overflow: visible;
   }
