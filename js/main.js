@@ -198,6 +198,90 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // ============================================
+  // TESTIMONIALS CAROUSEL
+  // ============================================
+  const carousel = document.getElementById('testimonials-carousel');
+  if (carousel) {
+    const track = carousel.querySelector('.testimonials-track');
+    const cards = track.querySelectorAll('.testimonial-card');
+    const prevBtn = carousel.querySelector('.carousel-prev');
+    const nextBtn = carousel.querySelector('.carousel-next');
+    const dots = carousel.querySelectorAll('.carousel-dot');
+    const totalCards = cards.length;
+    let currentIndex = 0;
+    let autoPlayTimer;
+
+    function getVisibleCards() {
+      const w = window.innerWidth;
+      if (w >= 1024) return 3;
+      if (w >= 768) return 2;
+      return 1;
+    }
+
+    function updateCarousel() {
+      const visible = getVisibleCards();
+      const maxIndex = Math.max(0, totalCards - visible);
+      if (currentIndex > maxIndex) currentIndex = 0;
+      const percentage = (currentIndex * 100) / totalCards;
+      track.style.transform = 'translateX(-' + percentage + '%)';
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    function goNext() {
+      const visible = getVisibleCards();
+      const maxIndex = Math.max(0, totalCards - visible);
+      currentIndex++;
+      if (currentIndex > maxIndex) currentIndex = 0;
+      updateCarousel();
+    }
+
+    function goPrev() {
+      const visible = getVisibleCards();
+      const maxIndex = Math.max(0, totalCards - visible);
+      currentIndex--;
+      if (currentIndex < 0) currentIndex = maxIndex;
+      updateCarousel();
+    }
+
+    function goToSlide(index) {
+      currentIndex = index;
+      updateCarousel();
+      resetAutoPlay();
+    }
+
+    function startAutoPlay() {
+      autoPlayTimer = setInterval(goNext, 7000);
+    }
+
+    function resetAutoPlay() {
+      clearInterval(autoPlayTimer);
+      startAutoPlay();
+    }
+
+    nextBtn.addEventListener('click', function() {
+      goNext();
+      resetAutoPlay();
+    });
+
+    prevBtn.addEventListener('click', function() {
+      goPrev();
+      resetAutoPlay();
+    });
+
+    dots.forEach(function(dot, i) {
+      dot.addEventListener('click', function() {
+        goToSlide(i);
+      });
+    });
+
+    window.addEventListener('resize', updateCarousel);
+    updateCarousel();
+    startAutoPlay();
+  }
+
+  // ============================================
   // SCROLL REVEAL ANIMATIONS
   // ============================================
   const revealElements = document.querySelectorAll('.reveal');
