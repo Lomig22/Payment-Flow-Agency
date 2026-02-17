@@ -218,12 +218,19 @@ document.addEventListener('DOMContentLoaded', function() {
       return 1;
     }
 
+    function getCardWidth() {
+      const visible = getVisibleCards();
+      return 100 / visible;
+    }
+
     function updateCarousel() {
       const visible = getVisibleCards();
       const maxIndex = Math.max(0, totalCards - visible);
-      if (currentIndex > maxIndex) currentIndex = 0;
-      const percentage = (currentIndex * 100) / totalCards;
-      track.style.transform = 'translateX(-' + percentage + '%)';
+      if (currentIndex > maxIndex) currentIndex = maxIndex;
+      if (currentIndex < 0) currentIndex = 0;
+      const cardWidth = getCardWidth();
+      const offset = currentIndex * cardWidth;
+      track.style.transform = 'translateX(-' + offset + '%)';
       dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === currentIndex);
       });
@@ -246,7 +253,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function goToSlide(index) {
-      currentIndex = index;
+      const visible = getVisibleCards();
+      const maxIndex = Math.max(0, totalCards - visible);
+      currentIndex = Math.min(index, maxIndex);
       updateCarousel();
       resetAutoPlay();
     }
@@ -280,6 +289,23 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCarousel();
     startAutoPlay();
   }
+
+  // Toggle text for long testimonials
+  window.toggleText = function(btn) {
+    const textEl = btn.previousElementSibling;
+    const cardInner = btn.closest('.card-inner');
+    if (textEl.classList.contains('truncated')) {
+      textEl.classList.remove('truncated');
+      textEl.classList.add('expanded');
+      cardInner.classList.add('expanded');
+      btn.textContent = '... voir moins';
+    } else {
+      textEl.classList.add('truncated');
+      textEl.classList.remove('expanded');
+      cardInner.classList.remove('expanded');
+      btn.textContent = '... voir plus';
+    }
+  };
 
   // ============================================
   // SCROLL REVEAL ANIMATIONS
