@@ -1901,7 +1901,12 @@ p {
   /* Urgency Bar Mobile - hauteur fixe pour calcul header */
   .urgency-bar {
     padding: 0.5rem 0.75rem;
-    min-height: 40px;
+    min-height: 44px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
   }
   
   .urgency-content {
@@ -1946,7 +1951,7 @@ p {
   
   /* Header Mobile - positionné SOUS la barre d'urgence avec espace */
   .header {
-    top: 40px;
+    top: 44px;
     padding: 0.5rem 0 0 !important;
   }
   
