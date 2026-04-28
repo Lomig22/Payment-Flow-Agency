@@ -52,9 +52,6 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="apple-touch-icon" href="images/favicon.png">
   
-  <!-- Calendly Badge Widget CSS -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  
   <!-- CSS with preload for critical resources -->
   <link rel="preload" href="css/styles.css" as="style">
   <link rel="stylesheet" href="css/styles.css">
@@ -1004,10 +1001,7 @@
         </svg>
       </button>
       
-      <!-- Début de widget en ligne Calendly -->
-      <div class="calendly-inline-widget" data-url="https://calendly.com/paymentfloww/prevuesiteweb?hide_landing_page_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
-      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-      <!-- Fin de widget en ligne Calendly -->
+      <iframe src="https://app.lemcal.com/@lomig-guegueniat/consultation-gratuit" frameborder="0" style="width:100%;height:700px;border:none;min-width:320px;" loading="lazy" title="Réserver un rendez-vous"></iframe>
     </div>
   </div>
 
@@ -1102,45 +1096,41 @@
   <!-- JavaScript - deferred for better performance -->
   <script src="js/main.js" defer></script>
   
-  <!-- Calendly Badge Widget - Pop-up en bas à droite -->
-  <script type="text/javascript">
-    window.onload = function() { 
-      Calendly.initBadgeWidget({ 
-        url: 'https://calendly.com/paymentfloww/30min?hide_landing_page_details=1&hide_gdpr_banner=1', 
-        text: 'Obtiens ton aperçu gratuit', 
-        color: '#6540e9', 
-        textColor: '#ffffff', 
-        branding: false 
-      }); 
-    }
-  </script>
-  
-  <!-- Styles personnalisés pour le widget Calendly Badge -->
+  <!-- Bouton flottant RDV -->
   <style>
-    .calendly-badge-widget {
-      bottom: 40px !important;
-      right: 20px !important;
+    .floating-rdv-btn {
+      position: fixed;
+      bottom: 40px;
+      right: 20px;
+      z-index: 9999;
+      background: #6540e9;
+      color: #ffffff;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 16px 28px;
+      box-shadow: 0 8px 30px rgba(101, 64, 233, 0.4);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .calendly-badge-widget .calendly-badge-content {
-      font-size: 16px !important;
-      padding: 16px 28px !important;
-      border-radius: 50px !important;
-      box-shadow: 0 8px 30px rgba(101, 64, 233, 0.4) !important;
-      font-weight: 600 !important;
+    .floating-rdv-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(101, 64, 233, 0.5);
     }
     @media (max-width: 639px) {
-      .calendly-badge-widget {
-        bottom: 20px !important;
-        right: 10px !important;
-        left: 10px !important;
-      }
-      .calendly-badge-widget .calendly-badge-content {
-        font-size: 14px !important;
-        padding: 14px 20px !important;
-        width: 100% !important;
-        text-align: center !important;
+      .floating-rdv-btn {
+        bottom: 20px;
+        right: 10px;
+        left: 10px;
+        font-size: 14px;
+        padding: 14px 20px;
+        width: calc(100% - 20px);
+        text-align: center;
       }
     }
   </style>
+
+  <button class="floating-rdv-btn calendly-trigger">Obtiens ton aperçu gratuit</button>
 </body>
 </html>
