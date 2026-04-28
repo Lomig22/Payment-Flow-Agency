@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NL5V7V9F');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WWHHYD4YZP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WWHHYD4YZP');
+  </script>
+  <!-- End Google Analytics 4 -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#4f46e5">
+  <meta name="description" content="Découvrez toutes les réalisations de Payment Flow — sites vitrines, plateformes, e-commerce et plus encore.">
+  <meta name="keywords" content="portfolio, réalisations, agence web, création site internet, projets web">
+  <meta name="author" content="Agence Payment Flow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Nos réalisations | Payment Flow">
+  <meta property="og:description" content="Découvrez tous les projets réalisés par Payment Flow — sites web, plateformes et stratégies digitales.">
+
+  <title>Nos réalisations - Payment Flow | Portfolio</title>
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"></noscript>
+
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Plus Jakarta Sans','Inter',system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.7;background:#fff;color:#0f172a;overflow-x:hidden}
+    .urgency-bar{background:linear-gradient(135deg,#4f46e5 0%,#7c3aed 100%);color:#fff;padding:.625rem 1rem;position:fixed;top:0;left:0;right:0;z-index:1001}
+    .header{position:fixed;top:40px;left:0;right:0;z-index:1000;padding:1rem 0;background:rgba(255,255,255,.9);backdrop-filter:blur(20px)}
+    .container{width:100%;max-width:1200px;margin:0 auto;padding:0 1.5rem}
+    @media(max-width:639px){.urgency-bar{padding:.375rem .5rem;min-height:36px}.header{top:36px}}
+
+    /* Page hero */
+    .page-hero {
+      padding: 9rem 0 4rem;
+      background: linear-gradient(135deg, #f8f7ff 0%, #eef2ff 100%);
+      text-align: center;
+    }
+    .page-hero .badge {
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    .page-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: var(--color-text, #0f172a);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .page-hero p {
+      font-size: 1.125rem;
+      color: var(--color-text-secondary, #64748b);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Filters */
+    .projects-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      padding: 3rem 0 2rem;
+    }
+    .filter-btn {
+      background: #f1f5f9;
+      border: 2px solid transparent;
+      color: #475569;
+      border-radius: 50px;
+      padding: 0.5rem 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .filter-btn:hover {
+      border-color: #6540e9;
+      color: #6540e9;
+    }
+    .filter-btn.active {
+      background: #6540e9;
+      border-color: #6540e9;
+      color: #fff;
+    }
+
+    /* Projects grid full page */
+    .projects-page-section {
+      padding: 0 0 5rem;
+    }
+    .projects-page-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    @media (max-width: 1024px) {
+      .projects-page-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 639px) {
+      .projects-page-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+      .projects-filters { gap: 0.5rem; }
+      .filter-btn { font-size: 0.8rem; padding: 0.4rem 1rem; }
+    }
+
+    .project-card[hidden] { display: none !important; }
+
+    /* Empty state */
+    .projects-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 4rem 2rem;
+      color: #94a3b8;
+      font-size: 1rem;
+      display: none;
+    }
+    .projects-empty.visible { display: block; }
+
+    /* CTA bottom */
+    .projects-cta-section {
+      background: linear-gradient(135deg, #f8f7ff 0%, #eef2ff 100%);
+      padding: 5rem 0;
+      text-align: center;
+    }
+    .projects-cta-section h2 {
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--color-text, #0f172a);
+    }
+    .projects-cta-section p {
+      color: var(--color-text-secondary, #64748b);
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+    .projects-cta-section .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Floating button */
+    .floating-rdv-btn {
+      position: fixed;
+      bottom: 40px;
+      right: 20px;
+      z-index: 9999;
+      background: #6540e9;
+      color: #ffffff;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 16px 28px;
+      box-shadow: 0 8px 30px rgba(101, 64, 233, 0.4);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-family: inherit;
+    }
+    .floating-rdv-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(101, 64, 233, 0.5);
+    }
+    @media (max-width: 639px) {
+      .floating-rdv-btn {
+        bottom: 20px;
+        right: 10px;
+        left: 10px;
+        font-size: 14px;
+        padding: 14px 20px;
+        width: calc(100% - 20px);
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL5V7V9F"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <a href="#main-content" class="sr-only">Aller au contenu principal</a>
+
+  <!-- URGENCY BAR -->
+  <div class="urgency-bar" id="urgency-bar">
+    <div class="urgency-content">
+      <span class="urgency-icon">🔥</span>
+      <span class="urgency-text"><strong>Offre limitée :</strong> Audit digital gratuit + 20% de réduction</span>
+      <div class="countdown" id="countdown">
+        <div class="countdown-item">
+          <span class="countdown-value" id="countdown-hours">03</span>
+          <span class="countdown-label">h</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-value" id="countdown-minutes">04</span>
+          <span class="countdown-label">m</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-value" id="countdown-seconds">59</span>
+          <span class="countdown-label">s</span>
+        </div>
+      </div>
+      <button class="urgency-cta lemcal-trigger">J'en profite →</button>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">Payment <span>Flow</span></a>
+
+        <nav class="nav">
+          <a href="index.html#probleme" class="nav-link">Problématique</a>
+          <a href="index.html#services" class="nav-link">Services</a>
+          <a href="index.html#temoignages" class="nav-link">Témoignages</a>
+          <a href="projets.html" class="nav-link active">Projets</a>
+          <a href="index.html#methode" class="nav-link">Méthode</a>
+        </nav>
+
+        <div class="header-cta">
+          <button class="btn btn-primary lemcal-trigger">Réserver un RDV</button>
+        </div>
+
+        <button class="mobile-menu-btn" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" id="main-content">
+    <div class="container">
+      <span class="badge">Portfolio</span>
+      <h1>Nos <span class="text-gradient">réalisations</span></h1>
+      <p>Des projets concrets qui génèrent des résultats. Découvrez comment nous transformons les ambitions digitales en succès mesurables.</p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects-page-section">
+    <div class="container">
+
+      <!-- Filters -->
+      <div class="projects-filters" id="projects-filters">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="site-vitrine">Site vitrine</button>
+        <button class="filter-btn" data-filter="immobilier">Immobilier</button>
+        <button class="filter-btn" data-filter="rh-management">RH & Management</button>
+        <button class="filter-btn" data-filter="artisan">Artisan</button>
+        <button class="filter-btn" data-filter="plateforme">Plateforme</button>
+        <button class="filter-btn" data-filter="automobile">Automobile</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="projects-page-grid" id="projects-grid">
+
+        <a href="https://www.enharmonieweb.com" target="_blank" rel="noopener" class="project-card reveal reveal-delay-1" data-category="site-vitrine">
+          <div class="project-image" style="background:none;padding:0;">
+            <img src="images/Harmonie.png" alt="En Harmonie - Cours de piano à Brest" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Site vitrine</span>
+            <h3>En Harmonie</h3>
+            <p>Cours de piano à Brest — Site élégant et moderne conçu pour convertir les visiteurs en élèves.</p>
+          </div>
+        </a>
+
+        <a href="https://luxeaura-pi.vercel.app/" target="_blank" rel="noopener" class="project-card reveal reveal-delay-2" data-category="immobilier">
+          <div class="project-image" style="background:none;padding:0;">
+            <img src="images/LUXAURA.png" alt="Luxeaura - Immobilier de luxe à Monaco" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Immobilier luxe</span>
+            <h3>Luxeaura</h3>
+            <p>Immobilier de prestige à Monaco — Design premium taillé pour une clientèle haut de gamme.</p>
+          </div>
+        </a>
+
+        <a href="https://sarel-hazel.vercel.app/" target="_blank" rel="noopener" class="project-card reveal reveal-delay-3" data-category="rh-management">
+          <div class="project-image" style="background:none;padding:0;">
+            <img src="images/SAREL.png" alt="Sarel - RH et management en Bretagne" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="project-content">
+            <span class="project-tag">RH & Management</span>
+            <h3>Sarel</h3>
+            <p>Cabinet RH et management en Bretagne — Positionnement expert et génération de leads qualifiés.</p>
+          </div>
+        </a>
+
+        <a href="https://goz-elec.vercel.app/" target="_blank" rel="noopener" class="project-card reveal reveal-delay-4" data-category="artisan">
+          <div class="project-image" style="background:none;padding:0;">
+            <img src="images/GOZ ELEC.png" alt="Goz Elec - Électricien à Rennes" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Artisan</span>
+            <h3>Goz Elec</h3>
+            <p>Électricien professionnel à Rennes — Site local optimisé SEO pour capter les demandes de devis.</p>
+          </div>
+        </a>
+
+        <a href="https://hub-lo.com/" target="_blank" rel="noopener" class="project-card reveal reveal-delay-5" data-category="plateforme">
+          <div class="project-image" style="background:none;padding:0;">
+            <img src="images/HUBLO.png" alt="Hublo - Plateforme de communauté" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Plateforme</span>
+            <h3>Hublo</h3>
+            <p>Plateforme de création de communauté et de cours en ligne — Expérience utilisateur fluide et engageante.</p>
+          </div>
+        </a>
+
+        <a href="https://ewigo.vercel.app/" target="_blank" rel="noopener" class="project-card reveal reveal-delay-5" data-category="automobile">
+          <div class="project-image" style="background:none;padding:0;">
+            <img src="images/ConcessAuto.png" alt="ConcessAuto - Concessionnaire automobile" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Automobile</span>
+            <h3>ConcessAuto</h3>
+            <p>Concessionnaire automobile — Site moderne et performant pour maximiser les prises de contact.</p>
+          </div>
+        </a>
+
+        <div class="projects-empty" id="projects-empty">Aucun projet dans cette catégorie pour le moment.</div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BOTTOM -->
+  <section class="projects-cta-section">
+    <div class="container">
+      <h2>Votre projet sera le prochain ?</h2>
+      <p>Discutons de vos objectifs et voyons comment nous pouvons faire grandir votre activité.</p>
+      <div class="cta-buttons">
+        <button class="btn btn-primary btn-lg lemcal-trigger">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          Réserver un appel gratuit
+        </button>
+        <button class="btn btn-secondary btn-lg contact-trigger">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          Demander un devis
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">Payment <span>Flow</span></a>
+          <p>Agence digitale spécialisée dans la création de sites web orientés conversion, le SEO et le marketing digital.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="index.html#services">Création de site</a></li>
+            <li><a href="index.html#services">Référencement SEO</a></li>
+            <li><a href="index.html#services">Marketing Digital</a></li>
+            <li><a href="index.html#services">Automatisation</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Agence</h4>
+          <ul>
+            <li><a href="index.html#solution">À propos</a></li>
+            <li><a href="projets.html">Réalisations</a></li>
+            <li><a href="index.html#temoignages">Témoignages</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:contact@payment-flow.fr">contact@payment-flow.fr</a></li>
+            <li><a href="tel:+33637018517">+33 6 37 01 85 17</a></li>
+            <li>Plougastel-Daoulas, France</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2024 Payment Flow. Tous droits réservés.</p>
+        <div class="footer-legal">
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="politique-confidentialite.html">Politique de confidentialité</a>
+          <a href="cgv.html">CGV</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LEMCAL MODAL -->
+  <div id="lemcal-modal" class="calendly-modal" style="display: none;">
+    <div class="calendly-modal-overlay"></div>
+    <div class="calendly-modal-content">
+      <button class="calendly-modal-close" aria-label="Fermer">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="lemcal-embed-booking-calendar" data-user="usr_DzgjKitg2brTwhb5s" data-meeting-type="met_8XNicbgLH3SCANb4n"></div>
+    </div>
+  </div>
+  <script src="https://cdn.lemcal.com/lemcal-integrations.min.js" defer></script>
+
+  <!-- CONTACT FORM MODAL (reprise depuis index.html) -->
+  <div id="contact-modal" class="contact-modal" style="display: none;">
+    <div class="contact-modal-overlay"></div>
+    <div class="contact-modal-content">
+      <button class="contact-modal-close" aria-label="Fermer">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="contact-modal-header">
+        <h3>Demander un devis</h3>
+        <p>Dites-nous en plus sur votre projet</p>
+      </div>
+      <form id="contact-form" class="contact-form">
+        <div class="form-group">
+          <label for="contact-name">Nom complet *</label>
+          <input type="text" id="contact-name" name="name" required placeholder="Jean Dupont">
+        </div>
+        <div class="form-group">
+          <label for="contact-email">Email *</label>
+          <input type="email" id="contact-email" name="email" required placeholder="jean@exemple.fr">
+        </div>
+        <div class="form-group">
+          <label for="contact-phone">Téléphone</label>
+          <input type="tel" id="contact-phone" name="phone" placeholder="+33 6 00 00 00 00">
+        </div>
+        <div class="form-group">
+          <label for="contact-project">Votre projet *</label>
+          <textarea id="contact-project" name="project" required placeholder="Décrivez votre projet..." rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg form-submit">Envoyer ma demande</button>
+      </form>
+      <div id="contact-success" class="contact-success" style="display: none;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        <h3>Message envoyé !</h3>
+        <p>Nous vous répondrons dans les 24h.</p>
+        <button class="btn btn-primary success-close">Fermer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bouton flottant -->
+  <button class="floating-rdv-btn lemcal-trigger">Obtiens ton aperçu gratuit</button>
+
+  <script src="js/main.js" defer></script>
+
+  <!-- Filter script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('#projects-grid .project-card');
+      const emptyState = document.getElementById('projects-empty');
+
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterBtns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+
+          var filter = btn.getAttribute('data-filter');
+          var visible = 0;
+
+          cards.forEach(function (card) {
+            var match = filter === 'all' || card.getAttribute('data-category') === filter;
+            card.hidden = !match;
+            if (match) visible++;
+          });
+
+          emptyState.classList.toggle('visible', visible === 0);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
