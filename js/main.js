@@ -565,6 +565,44 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // ============================================
+  // LEMCAL MODAL
+  // ============================================
+  const lemcalModal = document.getElementById('lemcal-modal');
+  const lemcalTriggers = document.querySelectorAll('.lemcal-trigger');
+  const lemcalClose = lemcalModal ? lemcalModal.querySelector('.calendly-modal-close') : null;
+  const lemcalOverlay = lemcalModal ? lemcalModal.querySelector('.calendly-modal-overlay') : null;
+
+  function openLemcalModal() {
+    if (lemcalModal) {
+      lemcalModal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeLemcalModal() {
+    if (lemcalModal) {
+      lemcalModal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  }
+
+  lemcalTriggers.forEach(trigger => {
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      openLemcalModal();
+    });
+  });
+
+  if (lemcalClose) lemcalClose.addEventListener('click', closeLemcalModal);
+  if (lemcalOverlay) lemcalOverlay.addEventListener('click', closeLemcalModal);
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lemcalModal && lemcalModal.style.display === 'flex') {
+      closeLemcalModal();
+    }
+  });
+
+  // ============================================
   // CONTACT FORM MODAL
   // ============================================
   const contactModal = document.getElementById('contact-modal');
