@@ -1147,6 +1147,26 @@ p {
   font-size: 0.9375rem;
 }
 
+.service-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.service-card-arrow {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary, #6540e9);
+  transition: transform 0.2s;
+}
+
+.service-card-link:hover .service-card-arrow {
+  transform: translateX(4px);
+}
+
 .services-cta {
   text-align: center;
   margin-top: 3rem;
