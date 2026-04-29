@@ -464,17 +464,20 @@ document.addEventListener('DOMContentLoaded', function() {
       .nav-item .nav-dropdown {
         position: static;
         transform: none;
-        box-shadow: none;
-        border: none;
-        border-left: 3px solid #e2e8f0;
-        border-radius: 0;
-        padding: 0.25rem 0 0.25rem 0.75rem;
-        margin-left: 0.5rem;
+        padding-top: 0;
         display: none;
-        background: transparent;
       }
       .nav-item.dropdown-open .nav-dropdown {
         display: flex;
+      }
+      .nav-item .nav-dropdown-inner {
+        background: transparent;
+        border: none;
+        border-left: 3px solid #e2e8f0;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0.25rem 0 0.25rem 0.75rem;
+        margin-left: 0.5rem;
       }
       .nav-item .nav-link {
         width: 100%;
