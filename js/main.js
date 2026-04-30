@@ -154,6 +154,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   function openMenu() {
+    const header = document.getElementById('header');
+    if (header) {
+      nav.style.top = header.getBoundingClientRect().bottom + 'px';
+    }
     nav.classList.add('active');
     mobileMenuBtn.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -436,7 +440,6 @@ document.addEventListener('DOMContentLoaded', function() {
     .nav.active {
       display: flex !important;
       position: fixed;
-      top: 70px;
       left: 0;
       right: 0;
       background: white;
@@ -445,7 +448,9 @@ document.addEventListener('DOMContentLoaded', function() {
       gap: 1rem;
       box-shadow: 0 10px 40px rgba(0,0,0,0.1);
       border-bottom: 1px solid #e2e8f0;
-      z-index: 999;
+      z-index: 1002;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
     }
     
     .mobile-menu-btn.active span:nth-child(1) {

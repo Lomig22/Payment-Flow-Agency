@@ -324,7 +324,7 @@ p {
    ============================================ */
 .header {
   position: sticky;
-  top: 0;
+  top: 40px;
   left: 0;
   right: 0;
   z-index: 1000;
@@ -2046,23 +2046,23 @@ p {
   }
   
   .urgency-text {
-    font-size: 0.6875rem;
+    font-size: 0.75rem;
     text-align: center;
     white-space: normal;
     line-height: 1.3;
   }
-  
+
   .countdown-item {
     padding: 0.125rem 0.25rem;
   }
-  
+
   .countdown-value {
-    font-size: 0.6875rem;
+    font-size: 0.75rem;
     min-width: 0.875rem;
   }
-  
+
   .countdown-label {
-    font-size: 0.5625rem;
+    font-size: 0.625rem;
   }
   
   .urgency-cta {
@@ -2080,7 +2080,7 @@ p {
   
   /* Header Mobile */
   .header {
-    top: 0;
+    top: 36px;
     padding: 0.5rem 0 0 !important;
   }
   
@@ -2346,6 +2346,22 @@ p {
     margin-right: auto;
   }
   
+  /* Scroll hint — fade indiquant qu'il y a du contenu à droite */
+  .scroll-hint-wrapper {
+    position: relative;
+  }
+  .scroll-hint-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 1rem;
+    width: 3rem;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.95));
+    pointer-events: none;
+    z-index: 2;
+  }
+
   /* Problem Cards Mobile - Optimisé pour petits écrans */
   .problem-grid {
     display: flex;
