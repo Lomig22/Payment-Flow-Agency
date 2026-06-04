@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/candidature", "destination": "/candidature/", "permanent": false }
+  ]
+}
