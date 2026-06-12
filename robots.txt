@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Page de recrutement privée (non indexée)
+Disallow: /candidature/
+
+Sitemap: https://www.payment-flow.fr/sitemap.xml
