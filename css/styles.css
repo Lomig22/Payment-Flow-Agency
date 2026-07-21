@@ -3195,7 +3195,114 @@ p {
   .calendly-modal-overlay,
   .calendly-modal-content,
   .contact-modal-overlay,
-  .contact-modal-content {
+  .contact-modal-content,
+  .faq-answer {
     animation: none;
+  }
+
+  .faq-question::after {
+    transition: none;
+  }
+}
+
+/* ============================================
+   FAQ (accordéon accessible, sans JS)
+   ============================================ */
+.faq-list {
+  max-width: 820px;
+  margin: 3rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 0 1.75rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item[open] {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.faq-question {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.375rem 0;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.0625rem;
+  line-height: 1.4;
+  color: var(--color-text);
+  transition: color 0.2s ease;
+}
+
+.faq-question:hover {
+  color: var(--color-primary);
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question::after {
+  content: "";
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%234f46e5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>') no-repeat center / contain;
+  transition: transform 0.25s ease;
+}
+
+.faq-item[open] .faq-question::after {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 0 1.5rem;
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  animation: faqReveal 0.25s ease;
+}
+
+.faq-answer p {
+  margin-bottom: 0.75rem;
+}
+
+.faq-answer p:last-child {
+  margin-bottom: 0;
+}
+
+@keyframes faqReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 639px) {
+  .faq-list {
+    margin-top: 2rem;
+  }
+
+  .faq-item {
+    padding: 0 1.25rem;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+    padding: 1.125rem 0;
   }
 }
