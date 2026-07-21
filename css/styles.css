@@ -2351,28 +2351,14 @@ p {
     position: relative;
   }
   .scroll-hint-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 1rem;
-    width: 3rem;
-    background: linear-gradient(to right, transparent, rgba(255,255,255,0.95));
-    pointer-events: none;
-    z-index: 2;
+    display: none;
   }
 
   /* Problem Cards Mobile - Optimisé pour petits écrans */
   .problem-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 0.75rem;
-    padding: 0 0.75rem 1rem;
-    margin: 0 -0.75rem;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
   }
   
   .problem-grid::-webkit-scrollbar {
@@ -2380,22 +2366,16 @@ p {
   }
   
   .problem-card {
-    flex: 0 0 min(280px, calc(100vw - 2.25rem));
-    scroll-snap-align: start;
-    padding: 1rem;
-    min-width: 260px;
+    width: 100%;
+    min-width: 0;
+    padding: 1.25rem;
   }
   
   /* Process Stack Mobile - Scroll horizontal */
   .process-stack {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    flex-direction: column;
     gap: 1rem;
-    padding-bottom: 1rem;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
   }
   
   .process-stack::-webkit-scrollbar {
@@ -2403,8 +2383,7 @@ p {
   }
   
   .stack-card {
-    flex: 0 0 280px;
-    scroll-snap-align: start;
+    width: 100%;
     position: relative !important;
     top: 0 !important;
   }
@@ -2468,15 +2447,9 @@ p {
   
   /* Services Mobile - Optimisé pour petits écrans */
   .services-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 0.75rem;
-    padding: 0 0.75rem 1rem;
-    margin: 0 -0.75rem;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
   }
   
   .services-grid::-webkit-scrollbar {
@@ -2484,10 +2457,9 @@ p {
   }
   
   .service-card {
-    flex: 0 0 min(280px, calc(100vw - 2.25rem));
-    scroll-snap-align: start;
+    width: 100%;
+    min-width: 0;
     padding: 1.25rem;
-    min-width: 260px;
   }
   
   /* Testimonials Mobile - Carousel optimisé */
@@ -2532,14 +2504,9 @@ p {
   
   /* Projects Mobile - Scroll horizontal */
   .projects-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 1rem;
-    padding-bottom: 1rem;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
   }
   
   .projects-grid::-webkit-scrollbar {
@@ -2547,8 +2514,7 @@ p {
   }
   
   .project-card {
-    flex: 0 0 280px;
-    scroll-snap-align: start;
+    width: 100%;
   }
   
   .project-image {
@@ -2557,14 +2523,9 @@ p {
   
   /* Process Steps Mobile - Scroll horizontal */
   .process-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 1rem;
-    padding-bottom: 1rem;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
   }
   
   .process-grid::-webkit-scrollbar {
@@ -2572,8 +2533,7 @@ p {
   }
   
   .process-step {
-    flex: 0 0 260px;
-    scroll-snap-align: start;
+    width: 100%;
     padding: 1.5rem;
   }
   
