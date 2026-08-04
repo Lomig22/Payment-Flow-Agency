@@ -147,11 +147,25 @@ document.addEventListener('DOMContentLoaded', function() {
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
   const nav = document.querySelector('.nav');
   
+  // Verrou de scroll robuste : plusieurs UI (menu, modales) peuvent verrouiller
+  // le scroll. On compte les verrous pour ne jamais rester bloqué sur une section.
+  const scrollLocks = new Set();
+  function lockScroll(key) {
+    scrollLocks.add(key);
+    document.body.style.overflow = 'hidden';
+  }
+  function unlockScroll(key) {
+    scrollLocks.delete(key);
+    if (scrollLocks.size === 0) {
+      document.body.style.overflow = '';
+    }
+  }
+
   function closeMenu() {
     nav.classList.remove('active');
     mobileMenuBtn.classList.remove('active');
-    document.body.style.overflow = '';
     document.body.classList.remove('menu-open');
+    unlockScroll('menu');
   }
   
   function openMenu() {
@@ -161,8 +175,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     nav.classList.add('active');
     mobileMenuBtn.classList.add('active');
-    document.body.style.overflow = 'hidden';
     document.body.classList.add('menu-open');
+    lockScroll('menu');
   }
   
   if (mobileMenuBtn && nav) {
@@ -661,14 +675,14 @@ document.addEventListener('DOMContentLoaded', function() {
   function openLemcalModal() {
     if (lemcalModal) {
       lemcalModal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
+      lockScroll('lemcal');
     }
   }
 
   function closeLemcalModal() {
     if (lemcalModal) {
       lemcalModal.style.display = 'none';
-      document.body.style.overflow = '';
+      unlockScroll('lemcal');
     }
   }
 
@@ -700,15 +714,15 @@ document.addEventListener('DOMContentLoaded', function() {
   function openContactModal() {
     if (contactModal) {
       contactModal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
+      lockScroll('contact');
     }
   }
-  
+
   // Fonction pour fermer le modal contact
   function closeContactModal() {
     if (contactModal) {
       contactModal.style.display = 'none';
-      document.body.style.overflow = '';
+      unlockScroll('contact');
     }
   }
   
@@ -790,6 +804,22 @@ document.addEventListener('DOMContentLoaded', function() {
       closeContactModal();
     });
   }
+
+  // Filet de sécurité : ne jamais laisser le scroll bloqué (retour navigateur,
+  // restauration depuis le cache, etc.)
+  function forceCloseOverlays() {
+    if (lemcalModal) lemcalModal.style.display = 'none';
+    if (contactModal) contactModal.style.display = 'none';
+    if (nav) nav.classList.remove('active');
+    if (mobileMenuBtn) mobileMenuBtn.classList.remove('active');
+    document.body.classList.remove('menu-open');
+    scrollLocks.clear();
+    document.body.style.overflow = '';
+  }
+  window.addEventListener('popstate', forceCloseOverlays);
+  window.addEventListener('pageshow', function(e) {
+    if (e.persisted) forceCloseOverlays();
+  });
 
   console.log('🚀 Payment Flow - Site loaded successfully');
 });
