@@ -441,6 +441,63 @@
   </section>
 
   <!-- FOOTER -->
+  <!-- ============================================
+       FORMULAIRE DE DEMANDE (envoi par email via FormSubmit)
+       ============================================ -->
+  <section class="section quick-contact" id="demande">
+    <div class="container">
+      <div class="quick-contact-grid">
+        <div class="quick-contact-intro">
+          <span class="badge">Demande en ligne</span>
+          <h2>Parlez-nous de <span class="text-gradient">votre projet</span></h2>
+          <p>Laissez-nous quelques mots : on vous répond sous 24 h (jours ouvrés) avec une première recommandation.</p>
+          <ul class="quick-contact-points">
+            <li>Réponse personnalisée, pas de message automatique</li>
+            <li>Sans engagement</li>
+            <li>Ou appelez-nous : <a href="tel:+33637018517">06 37 01 85 17</a></li>
+          </ul>
+        </div>
+
+        <div class="quick-contact-card">
+          <form class="js-mail-form" action="https://formsubmit.co/ajax/contact@payment-flow.fr" method="POST">
+            <input type="text" name="_honey" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_subject" value="Nouvelle demande en ligne - Payment Flow">
+            <input type="hidden" name="page" value="">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="qc-name">Nom *</label>
+                <input type="text" id="qc-name" name="nom" required autocomplete="name" placeholder="Votre nom">
+              </div>
+              <div class="form-group">
+                <label for="qc-phone">Téléphone</label>
+                <input type="tel" id="qc-phone" name="telephone" autocomplete="tel" placeholder="06 00 00 00 00">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="qc-email">Email *</label>
+              <input type="email" id="qc-email" name="email" required autocomplete="email" placeholder="votre@email.com">
+            </div>
+            <div class="form-group">
+              <label for="qc-message">Votre demande *</label>
+              <textarea id="qc-message" name="message" required rows="4" placeholder="Votre activité et ce que vous cherchez (plus de clients, un site, des campagnes…)"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg form-submit">Envoyer ma demande</button>
+            <p class="form-legal">Vos informations servent uniquement à vous répondre. <a href="politique-confidentialite.html">Confidentialité</a></p>
+            <p class="form-error" role="alert" hidden>L'envoi a échoué. Réessayez ou écrivez-nous à <a href="mailto:contact@payment-flow.fr">contact@payment-flow.fr</a>.</p>
+          </form>
+          <div class="form-success" role="status" hidden>
+            <div class="form-success-icon">✓</div>
+            <h3>Demande envoyée !</h3>
+            <p>Merci, nous revenons vers vous sous 24 h (jours ouvrés).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
@@ -540,7 +597,12 @@
         <h3>Demander un devis</h3>
         <p>Dites-nous en plus sur votre projet</p>
       </div>
-      <form id="contact-form" class="contact-form">
+      <form id="contact-form" class="contact-form js-mail-form" action="https://formsubmit.co/ajax/contact@payment-flow.fr" method="POST">
+        <input type="text" name="_honey" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_subject" value="Nouvelle demande de devis - Payment Flow">
+        <input type="hidden" name="page" value="">
         <div class="form-group">
           <label for="contact-name">Nom complet *</label>
           <input type="text" id="contact-name" name="name" required placeholder="Jean Dupont">

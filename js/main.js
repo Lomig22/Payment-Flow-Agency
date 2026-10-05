@@ -756,41 +756,59 @@ document.addEventListener('DOMContentLoaded', function() {
   const contactSuccess = document.getElementById('contact-success');
   const successCloseBtn = document.querySelector('.success-close');
   
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+  // Tous les formulaires .js-mail-form sont envoyés par email via FormSubmit (endpoint AJAX)
+  document.querySelectorAll('form.js-mail-form').forEach(form => {
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
-      
-      // Récupérer les données du formulaire
-      const formData = new FormData(contactForm);
-      
-      // Envoyer le formulaire via fetch
-      fetch(contactForm.action, {
+
+      const submitBtn = form.querySelector('[type="submit"]');
+      const errorMsg = form.querySelector('.form-error');
+      const pageField = form.querySelector('input[name="page"]');
+      if (pageField) pageField.value = window.location.href;
+      if (errorMsg) errorMsg.hidden = true;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.dataset.label = submitBtn.dataset.label || submitBtn.textContent;
+        submitBtn.textContent = 'Envoi en cours…';
+      }
+
+      fetch(form.action, {
         method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
       })
-      .then(response => {
-        if (response.ok) {
-          // Masquer le formulaire
-          contactForm.style.display = 'none';
-          // Afficher le message de succès
-          if (contactSuccess) {
-            contactSuccess.style.display = 'block';
-          }
-          // Réinitialiser le formulaire
-          contactForm.reset();
-        } else {
-          alert('Une erreur est survenue. Veuillez réessayer.');
+      .then(response => response.json().then(data => ({ ok: response.ok, data })))
+      .then(({ ok, data }) => {
+        if (!ok || String(data.success) !== 'true') throw new Error(data.message || 'Envoi refusé');
+
+        form.reset();
+        form.style.display = 'none';
+        // Succès : message inline (.form-success voisin) ou modal (#contact-success)
+        const success = form.id === 'contact-form'
+          ? contactSuccess
+          : form.parentElement.querySelector('.form-success');
+        if (success) {
+          success.hidden = false;
+          success.style.display = 'block';
         }
+        if (window.dataLayer) window.dataLayer.push({ event: 'generate_lead', form_id: form.id || 'demande' });
       })
       .catch(error => {
-        console.error('Erreur:', error);
-        alert('Une erreur est survenue. Veuillez réessayer.');
+        console.error('Erreur formulaire:', error);
+        if (errorMsg) {
+          errorMsg.hidden = false;
+        } else {
+          alert('Une erreur est survenue. Réessayez ou écrivez-nous à contact@payment-flow.fr');
+        }
+      })
+      .finally(() => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = submitBtn.dataset.label;
+        }
       });
     });
-  }
+  });
   
   // Fermer le modal après confirmation
   if (successCloseBtn) {
