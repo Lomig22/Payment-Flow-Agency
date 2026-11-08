@@ -1,5 +1,9 @@
 {
   "redirects": [
-    { "source": "/candidature", "destination": "/candidature/", "permanent": false }
+    { "source": "/candidature", "destination": "/candidature/", "permanent": false },
+    { "source": "/methode", "destination": "/methode/", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/methode/:path*", "destination": "https://audit-gratuit.vercel.app/:path*" }
   ]
 }
